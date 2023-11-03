@@ -100,41 +100,41 @@ function Navbar() {
           </div>
           <ul className="navbar_links">
             <li>
-              <Link className="home-link" to="/">
+              <Link onClick={() => window.scrollTo(0, 0)} className="home-link" to="/">
                 Home
               </Link>
             </li>
             <li>
-              <Link className="about-link" to="/about">
+              <Link onClick={() => window.scrollTo(0, 0)} className="about-link" to="/about">
                 About
               </Link>
             </li>
             <li>
-              <Link className="models-link" to="/models">
+              <Link onClick={() => window.scrollTo(0, 0)} className="models-link" to="/models">
                 Vehicle Models
               </Link>
             </li>
             <li>
-              <Link className="testi-link" to="/testimonials">
+              <Link onClick={() => window.scrollTo(0, 0)} className="testi-link" to="/testimonials">
                 Testimonials
               </Link>
             </li>
             <li>
-              <Link className="team-link" to="/conditions">
+              <Link onClick={() => window.scrollTo(0, 0)} className="team-link" to="/conditions">
                 Terms & Conditions
               </Link>
             </li>
             <li>
-              <Link className="contact-link" to="/contact">
+              <Link onClick={() => window.scrollTo(0, 0)} className="contact-link" to="/contact">
                 Contact
               </Link>
             </li>
           </ul>
           <div className="navbar_buttons">
-            <Link className="navbar_buttons_sign-in" to="/sign-in">
+            <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_sign-in" to="/sign-in">
               Sign in
             </Link>
-            <Link className="navbar_buttons_register" to="/register">
+            <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_register" to="/register">
               Register
             </Link>
           </div>

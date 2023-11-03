@@ -3,6 +3,8 @@ import HeroPages from "../components/HeroPages";
 import ScrollTop from '../components/ScrollTop';
 import Footer from '../components/Footer';
 import { motion } from "framer-motion";
+import Banner from '../components/Banner';
+
 
 function Conditions() {
 return (
@@ -89,10 +91,10 @@ return (
         <br/>
         <br/>
         
-        <p>By using our service, you agree to these terms and conditions. If you do not agree, please do not use our services.</p>
+        <p style={{color:"black", fontWeight: "700"}}>By using our service, you agree to these terms and conditions. If you do not agree, please do not use our services.</p>
         
     </div>
-        
+        <Banner/>
         <Footer />
         <ScrollTop />
     </motion.div>
