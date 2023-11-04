@@ -1625,20 +1625,51 @@ body {
 }
 
 .download-section {
-  background-image: url("/src/images/banners/bg02.png");
-  background-color: #f8f8f8;
+  background-color: white;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: auto;
-  padding: 10rem 0;
+  height: 500px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.download_page_heading {
+  margin-left: 58px;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+.download_page_paragraph {
+  font-size: 1.6rem;
+  color: #706f7b;
+  margin-bottom: 10px;
+}
+.download-section iframe {
+  height: 100%;
+  border: 0.1px #706f7b;
+  border-radius: 10px;
 }
 
 @media (max-width: 700px) {
   .download-section {
     background-image: none;
+    align-items: center;
   }
+}
+
+.download_page_heading {
+  align-items: center;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+.download_page_paragraph {
+  font-size: 1.6rem;
+  color: #706f7b;
+  margin-bottom: 10px;
 }
 
 .download-text {
@@ -2467,6 +2498,7 @@ footer {
     align-items: center;
     gap: 1rem;
     text-align: center;
+    margin-top: 90px;
     padding: 90px 28px 0 28px;
   }
   .background-image {

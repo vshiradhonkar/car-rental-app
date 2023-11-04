@@ -123,7 +123,7 @@ function Register() {
           <div className="input-group">
             <input type="checkbox" id="terms" />
             <label htmlFor="terms">
-              By Signing up I agree with <Link to="/conditions">
+              By Signing up I agree with <Link to="/conditions"  onClick={() => window.scrollTo(0,0)}>
               Terms & Conditions
             </Link>
             </label>
