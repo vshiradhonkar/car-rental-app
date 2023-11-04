@@ -2799,18 +2799,20 @@ label {
   font-size: 3.5rem;
   font-weight: 700;
   padding-left: 145px;
+  margin-top: 20px;
 }
 .termspara {
   display: flex;
   justify-content: flex-start;
   margin-left: 17px;
   padding-left: 145px;
-  font-size: 2rem;
-  font-weight: 500;
-  color: rgb(109, 3, 209);
+  font-size: 20px;
+  margin-top: 5px;
+  color: rgba(109, 3, 209);
 }
 
 .allconditions {
+  margin-top: 40px;
   width: 150vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2828,7 +2830,6 @@ label {
   padding: 20px 28px 0 28px;
 }
 
-/* Additional styling for h1 and p tags within the container */
 .allconditions h1 {
   display: flex;
   justify-content: flex-start;
@@ -2847,6 +2848,7 @@ label {
   justify-content: flex-start;
   font-size: 2rem;
   margin: 15px 15px;
+  flex-wrap: wrap;
 }
 
 /* Responsive styles */
@@ -2865,16 +2867,14 @@ label {
 
   .allconditions {
     width: 100%;
-    padding: 10px;
   }
 
   .allconditions h1 {
     font-size: 1.5rem;
-    margin: 10px;
   }
 
   .allconditions p {
     font-size: 1.2rem;
-    margin: 10px;
+    text-align: left;
   }
 }
