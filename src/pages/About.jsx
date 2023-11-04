@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import ScrollTop from '../components/ScrollTop';
 import {motion} from "framer-motion";
+import Download from '../components/Download';
 
 
 function About() {
@@ -57,6 +58,12 @@ function About() {
               </div>
             </div>
           </div>
+          <Download/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <PlanTrip />
           <ScrollTop/>
         </div>
