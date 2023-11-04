@@ -71,17 +71,17 @@ return (
 
             <br />
         <h1>12. Governing Law</h1>
-            <p>These terms are governed by [Your Jurisdiction] law.</p>
+            <p>These terms are governed by Indian law.</p>
 
 
             <br />
         <h1>13. Changes to Terms</h1>
-            <p>We reserve the right to update these terms without notice; please review them regularly.</p>
+            <p>We reserve the right to update these terms without notice, please review them regularly.</p>
 
 
             <br />
         <h1>14. Contact Information</h1>
-            <p>For questions or concerns, please contact us at [Your Contact Information].</p>
+            <p>For questions or concerns, please contact us at customer care service.</p>
 
             <br />
         <h1>15. Entire Agreement</h1>
@@ -147,7 +147,7 @@ return (
             <p>We encourage responsible and eco-friendly driving to reduce the environmental impact of our rentals.</p>
         <br/>
 
-        <p style={{color:"red", fontSize: "2rem"}}>*for more details contact customer care service</p>
+        <p style={{color:"red", fontSize: "2rem"}}>*for more details contact customer care service*</p>
         <br/>
         
         <p style={{color:"black", fontWeight: "700"}}>By using our service, you agree to these terms and conditions. If you do not agree, please do not use our services.</p>
