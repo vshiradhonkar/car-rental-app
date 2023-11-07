@@ -2478,9 +2478,16 @@ footer {
   z-index: 2;
   padding: 60px 0px 0px 0px;
   align-self: center; /* Center the form horizontally */
-  margin-top: 5px; /* Add margin-top to create space between h2 and the form */
+  margin-top: 50px; /* Add margin-top to create space between h2 and the form */
 }
-
+.loginpasseye {
+  position: absolute;
+  top: 66%;
+  right: 6px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+}
 .login-input {
   font-size: 1.05em;
   font-weight: 300;
@@ -2728,7 +2735,6 @@ label {
   transform: translateY(-50%);
   background: none;
   border: none;
-  cursor: pointer;
 }
 
 .password-input button i {

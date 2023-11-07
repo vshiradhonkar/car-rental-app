@@ -5,6 +5,7 @@ import carFerrari from "../images/cars-big/Ferrari.jpg";
 import carCamaro from "../images/cars-big/camaro.jpg";
 import carAven from "../images/cars-big/aventador.jpg";
 import carPorsche from "../images/cars-big/panamera-turbo.jpg";
+import { Link } from "react-router-dom";
 
 function BookCar() {
   const [modal, setModal] = useState(false);
@@ -445,7 +446,7 @@ function BookCar() {
             </div>
             <span className="info-form_checkbox">
               <input type="checkbox" />
-              <p>Please Send me latest <strong> News & Updates </strong></p>
+              <p>I agree to all <Link to="/conditions" style={{ textDecoration: 'none' }}><strong>Terms & Conditions*</strong></Link></p>
             </span>
 
             <div className="reserve-button">
