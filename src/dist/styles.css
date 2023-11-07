@@ -135,6 +135,7 @@ body {
 
 .navbar_links a:hover {
   color: #ad21ff;
+  text-shadow: -3px 0px 5px #d09cfa;
 }
 
 @media (max-width: 1000px) {
