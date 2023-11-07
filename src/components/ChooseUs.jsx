@@ -7,7 +7,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 function ChooseUs() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
+    
     <>
       <section className="choose-section">
         <div className="container">
@@ -36,7 +40,7 @@ function ChooseUs() {
                   know you’re getting a great car at the best price.
                 </p>
               
-                <a href="#/about">
+                <a href="#/about" onClick={scrollToTop}>
                   Find Details &nbsp;
                   <FontAwesomeIcon icon={faAngleRight} />
                 </a>

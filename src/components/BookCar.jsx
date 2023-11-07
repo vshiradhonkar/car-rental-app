@@ -446,9 +446,8 @@ function BookCar() {
             </div>
             <span className="info-form_checkbox">
               <input type="checkbox" />
-              <p>I agree to all <Link to="/conditions" style={{ textDecoration: 'none' }}><strong>Terms & Conditions*</strong></Link></p>
+              <p>I agree to all <Link  to="/conditions" style={{ textDecoration: 'none' }}><strong>Terms & Conditions*</strong></Link></p>
             </span>
-
             <div className="reserve-button">
               <button onClick={confirmBooking}>Reserve Now</button>
             </div>
