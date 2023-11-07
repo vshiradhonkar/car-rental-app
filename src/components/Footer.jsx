@@ -13,9 +13,7 @@ function Footer() {
               <li>
                 <span>CAR</span> Rental
               </li>
-              <li>
-                We Offer a big range of Vehicles for all your driving Needs. We
-                have the perfect car to meet your needs.
+              <li>We offer a wide range of vehicles for all your driving needs. We have the perfect car to meet your needs.
               </li>
               <li>
                 <a href="tel:0123456789">
