@@ -68,8 +68,8 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/">
-                Our Team
+              <Link onClick={openNav} to="/conditions">
+                Terms & Conditions
               </Link>
             </li>
             <li>
