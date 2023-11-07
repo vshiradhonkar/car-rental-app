@@ -48,42 +48,42 @@ function Navbar() {
           </div>
           <ul className="mobile-navbar_links">
             <li>
-              <Link onClick={openNav} to="/">
+              <Link  onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/">
                 Home
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/about">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/about">
                 About
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/models">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/models">
                 Models
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/testimonials">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/testimonials">
                 Testimonials
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/conditions">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/conditions">
                 Terms & Conditions
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/contact">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/contact">
                 Contact
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/sign-in">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/sign-in">
                 Sign in
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/register">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/register">
                 Register
               </Link>
             </li>
