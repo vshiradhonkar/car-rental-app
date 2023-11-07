@@ -2523,6 +2523,14 @@ footer {
   .login-form {
     padding-top: 0; /* Remove top padding for mobile devices */
   }
+  .loginpasseye {
+    position: absolute;
+    top: 57%;
+    right: 6px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+  }
 }
 
 .Btn {
