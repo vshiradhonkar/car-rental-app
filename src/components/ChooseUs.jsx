@@ -40,7 +40,7 @@ function ChooseUs() {
                   know you’re getting a great car at the best price.
                 </p>
               
-                <a href="#/about" onClick={scrollToTop}>
+                <a href="#/about" onClick={scrollToTop} >
                   Find Details &nbsp;
                   <FontAwesomeIcon icon={faAngleRight} />
                 </a>

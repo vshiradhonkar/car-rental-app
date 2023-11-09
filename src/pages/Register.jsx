@@ -135,7 +135,9 @@ function Register() {
           </div>
           <h3 className="already">
             Already have an Account? &nbsp;
-            <a href="/#/sign-in" onClick={() => window.scrollTo(0,0)}>Sign In</a>
+            <Link to="/sign-in"  onClick={() => window.scrollTo(0,0)}>
+              Sign In
+            </Link>
           </h3>
         </div>
       </section>
