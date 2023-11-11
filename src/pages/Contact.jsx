@@ -66,9 +66,7 @@ function Contact() {
             <div className="contact-div_text">
               <h2>Need additional information?</h2>
               <p>
-                A multifaceted professional skilled in multiple fields of
-                research, development as well as a learning specialist. Over 15
-                years of experience.
+              Unleash the thrill of the open road with us. Seamlessly browse, book, and ride – experience travel at your fingertips, where every journey is an adventure.
               </p>
               <a href="/">
                 <FontAwesomeIcon icon={faPhone} />
@@ -80,7 +78,7 @@ function Contact() {
               </a>
               <a href="/">
                 <FontAwesomeIcon icon={faLocationDot} />
-                &nbsp; Gotham City
+                &nbsp; Los Santos
               </a>
             </div>
             <div className="contact-div_form">

@@ -26,16 +26,16 @@ function Testimonials() {
                   <FontAwesomeIcon icon={faQuoteRight} />
                 </span>
                 <p>
-                  "We were very satisfied with the organization of picking up
-                  the car at the airport and dropping it off at the ferry in
-                  Mahé. There were no problems and the car served our purpose. I
-                  definitely recommend it! "
+                  "This car rental service is so fire, it should be called Hot Wheels Rentals.
+                  I got a sweet ride at a price that was totally smokin'.
+                  The check-in process was quick and easy, and the staff was super chill.
+                  I'll definitely be renting from here again."
                 </p>
                 <div className="all-testimonials_box_name">
                   <div className="all-testimonials_box_name_profile">
                     <img src={Img1} alt="bary-img" />
                     <span>
-                      <h4>Bary Allen</h4>
+                      <h4>Franklin Clinton</h4>
                       <p>Central City</p>
                     </span>
                   </div>
@@ -48,16 +48,15 @@ function Testimonials() {
                 </span>
 
                 <p>
-                  "Very nice and competent contact person, tries very hard to
-                  organize everything to the satisfaction of the customer! Very
-                  friendly communication in German or English! Many thanks for
-                  everything! "
+                  "Rented a car from CAR Rental and had an excellent experience.
+                  The car was clean and in perfect condition, and the staff was friendly and helpful.
+                  The check-in and check-out process was quick and easy, and the price was very reasonable."
                 </p>
                 <div className="all-testimonials_box_name">
                   <div className="all-testimonials_box_name_profile">
                     <img src={Img2} alt="user_img" />
                     <span>
-                      <h4>Howard Stark</h4>
+                      <h4>Steve Haines</h4>
                       <p>New York</p>
                     </span>
                   </div>

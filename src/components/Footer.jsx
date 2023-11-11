@@ -44,7 +44,7 @@ function Footer() {
             <ul className="footer-content_2">
               <li>Company</li>
               <li>
-                <a href="https://www.google.com/maps/place/Chase+Tower/@41.8815145,-87.6313365,17z/data=!3m1!5s0x870b194932d254cd:0xc885769eddbdc962!4m14!1m7!3m6!1s0x880e2cbb6ac88921:0x85997ccd07d88d03!2sChase+Tower!8m2!3d41.8814746!4d-87.6296092!16zL20vMDN6NDNw!3m5!1s0x880e2cbb6ac88921:0x85997ccd07d88d03!8m2!3d41.8814746!4d-87.6296092!16zL20vMDN6NDNw?entry=ttu">Gotham City</a>
+                <a href="https://www.google.com/maps?sca_esv=581540659&sxsrf=AM9HkKkr1WFLXzsN_ZFDWPYgaODa-PqvPw:1699719139900&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAiDCBMb3MgQW5nZWxlczIKEC4YigUYsQMYQzIIEAAYigUYkQIyDRAuGIoFGLEDGIMBGEMyCBAAGIoFGJECMg4QLhiKBRixAxiDARiRAjIIEAAYigUYkQIyCBAAGIoFGJECMg0QLhiKBRixAxiDARhDMgoQABiKBRixAxhDMgoQABiKBRixAxhDMhkQLhiKBRixAxhDGJcFGNwEGN4EGOAE2AEBSIEGUABYAHAAeAGQAQCYAbIBoAGyAaoBAzAuMbgBA8gBAPgBAvgBAeIDBBgAIEGIBgG6BgYIARABGBQ&q=Los+Angeles&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiM4K-iq7yCAxW2klYBHVKgAYsQ_AUoA3oECAIQBQ">Los Santos</a>
               </li>
               <li>
                 <a href="#home">Careers</a>
