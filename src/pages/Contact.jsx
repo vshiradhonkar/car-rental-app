@@ -11,12 +11,14 @@ import {
 import ScrollTop from "../components/ScrollTop";
 import {motion} from "framer-motion";
 import { firestore } from "../firebase";
+import Modal from "react-modal";
 
 
 function Contact() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [question, setQuestion] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
 
   const handleSubmit = async (e) => {
@@ -43,11 +45,16 @@ function Contact() {
       setQuestion("");
 
       // Display a success message or redirect the user
-      alert("Message sent successfully!");
+      setIsModalOpen(true);
     } catch (error) {
       console.error("Error sending message:", error);
+      alert("An error occurred while sending the message. Please try again.");
       // Handle error, e.g., show an error message to the user
     }
+  };
+  const closeModal = () => {
+    // Close the modal and reset the state
+    setIsModalOpen(false);
   };
 
   return (
@@ -98,6 +105,19 @@ function Contact() {
                 </button>
               </form>
             </div>
+          {/* Modal */}
+      <Modal className="contact-modal"
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Query Recorded Modal">
+        <h2>Greetings!</h2>
+        <p>Your query has been recorded successfully.Thank you!</p>
+        
+        <button className="contact-modal-button" onClick={closeModal}>OK</button>
+      
+      </Modal>
+
+
           </div>
         </div>
         <div className="book-banner">

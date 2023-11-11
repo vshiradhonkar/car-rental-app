@@ -2440,6 +2440,57 @@ footer {
   background-color: #6200ff;
 }
 
+/* conatct page modal */
+/* contact page modal */
+.contact-modal {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 24 24"><path d="M20.8,9.4,4.87,2.18A2,2,0,0,0,2.18,4.87h0L9.4,20.8A2,2,0,0,0,11.27,22h.25a2.26,2.26,0,0,0,2-1.8l1.13-5.58,5.58-1.13a2.26,2.26,0,0,0,1.8-2A2,2,0,0,0,20.8,9.4Z" style="fill: rgb(0, 0, 0);"></path></svg>'),
+    auto;
+  color: #010103;
+  z-index: 99;
+  display: flex;
+  border: 2px solid white;
+  background-color: rgb(255, 255, 255);
+  padding-right: 2px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-modal h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.contact-modal p {
+  font-size: 18px;
+}
+
+.modal-content {
+  padding: 20px; /* Adjust the padding as needed */
+  text-align: center;
+  text-wrap: wrap;
+}
+
+.contact-modal-button {
+  margin-top: 15px;
+  text-align: center;
+  background-color: #dbdbdb;
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+.contact-modal-button:hover {
+  box-shadow: 5px 10px 15px 0 rgba(144, 24, 255, 0.5);
+  background-color: #6200ff;
+  color: black;
+}
+
 /*# sourceMappingURL=styles.css.map */
 
 /* LOGIN CSS */
