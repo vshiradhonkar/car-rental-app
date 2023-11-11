@@ -80,7 +80,7 @@ function Contact() {
               </a>
               <a href="/">
                 <FontAwesomeIcon icon={faLocationDot} />
-                &nbsp; New York, USA
+                &nbsp; Gotham City
               </a>
             </div>
             <div className="contact-div_form">

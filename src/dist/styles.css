@@ -2440,16 +2440,23 @@ footer {
   background-color: #6200ff;
 }
 
-/* conatct page modal */
 /* contact page modal */
+@media (max-width: 950px) {
+  .contact-modal {
+    flex-wrap: wrap;
+  }
+  .contact-modal p {
+    text-align: center;
+  }
+}
 .contact-modal {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 24 24"><path d="M20.8,9.4,4.87,2.18A2,2,0,0,0,2.18,4.87h0L9.4,20.8A2,2,0,0,0,11.27,22h.25a2.26,2.26,0,0,0,2-1.8l1.13-5.58,5.58-1.13a2.26,2.26,0,0,0,1.8-2A2,2,0,0,0,20.8,9.4Z" style="fill: rgb(0, 0, 0);"></path></svg>'),
     auto;
   color: #010103;
   z-index: 99;
   display: flex;
-  border: 2px solid white;
-  background-color: rgb(255, 255, 255);
+  border: 1px dotted white;
+  background-color: rgb(255, 255, 255, 0);
   padding-right: 2px;
   position: fixed;
   top: 50%;

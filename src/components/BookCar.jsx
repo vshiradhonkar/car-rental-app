@@ -197,11 +197,16 @@ function BookCar() {
                   </label>
                   <select value={pickUp} onChange={handlePick}>
                     <option>Select Your Pick Up Location</option>
-                    <option>Mumbai</option>
-                    <option>Pune</option>
-                    <option>Delhi</option>
-                    <option>Jaipur</option>
-                    <option>Chennai</option>
+                    <option>Canal Street Bridge</option>
+                    <option>Lakeshore Water Refinery</option>
+                    <option>Sienna Brick Factory</option>
+                    <option>Windy City Shipyards</option>
+                    <option>Chicago Harbor</option>
+                    <option>Cree Theater</option>
+                    <option>Face Fountain</option>
+                    <option>Tremont House Hotel</option>
+                    <option>Vault Tower</option>
+                    <option>Willis Tower</option>
                   </select>
                 </div>
 
@@ -212,11 +217,16 @@ function BookCar() {
                   </label>
                   <select value={dropOff} onChange={handleDrop}>
                     <option>Select drop off location</option>
-                    <option>Mumbai</option>
-                    <option>Pune</option>
-                    <option>Delhi</option>
-                    <option>Jaipur</option>
-                    <option>Chennai</option>
+                    <option>Canal Street Railroad Bridge</option>
+                    <option>Lakeshore Water Refinery</option>
+                    <option>Sienna Brick Factory</option>
+                    <option>Windy City Shipyards</option>
+                    <option>Chicago Harbor</option>
+                    <option>Cree Theater</option>
+                    <option>Face Fountain</option>
+                    <option>Tremont House Hotel</option>
+                    <option>Vault Tower</option>
+                    <option>Willis Tower</option>
                   </select>
                 </div>
 

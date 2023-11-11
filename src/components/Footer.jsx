@@ -44,7 +44,7 @@ function Footer() {
             <ul className="footer-content_2">
               <li>Company</li>
               <li>
-                <a href="https://www.google.com/maps/place/Times+Square/@40.7579747,-73.9881175,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25855c6480299:0x55194ec5a1ae072e!8m2!3d40.7579747!4d-73.9855426!16zL20vMDdxZHI?entry=ttu">New York</a>
+                <a href="https://www.google.com/maps/place/Chase+Tower/@41.8815145,-87.6313365,17z/data=!3m1!5s0x870b194932d254cd:0xc885769eddbdc962!4m14!1m7!3m6!1s0x880e2cbb6ac88921:0x85997ccd07d88d03!2sChase+Tower!8m2!3d41.8814746!4d-87.6296092!16zL20vMDN6NDNw!3m5!1s0x880e2cbb6ac88921:0x85997ccd07d88d03!8m2!3d41.8814746!4d-87.6296092!16zL20vMDN6NDNw?entry=ttu">Gotham City</a>
               </li>
               <li>
                 <a href="#home">Careers</a>

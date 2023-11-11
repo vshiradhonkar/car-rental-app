@@ -9,8 +9,9 @@ function Download() {
       <p className="download_page_paragraph">Visit our car rental center,
       where convenience meets quality service.
       We're here to make your journey seamless, offering a wide range of vehicles to suit your needs.</p>
-      <br/>      
-      <iframe title="map" width="100%" height="auto" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=1000&amp;hl=en&amp;q=Times%20Square,Manhattan,%20NY%2010036,%20United%20States+(Carental%20Location)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+      <br/>
+      <iframe title="map" width="100%" height="auto" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=10%20S%20Dearborn%20St,%20Chicago,%20IL%2060603,%20United%20States+(Car%20Rental%20HQ)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+      {/* <iframe title="map" width="100%" height="auto" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=1000&amp;hl=en&amp;q=Times%20Square,Manhattan,%20NY%2010036,%20United%20States+(Carental%20Location)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> */}
       {/* <div className="container">
           <div className="download-text">
             <h2>Download Our App to get most out of it</h2>
