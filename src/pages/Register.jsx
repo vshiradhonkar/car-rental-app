@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faPhone, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 import HeroPages from "../components/HeroPages";
 import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollTop";
 import { Link } from "react-router-dom";
 import {motion} from "framer-motion";
+import {auth, firestore} from "../firebase";
 
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,27 +26,56 @@ function Register() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      !formData.name ||
+      !formData.surname ||
+      !formData.phoneNumber ||
+      !formData.email ||
+      !formData.password
+    ) {
+      alert("All fields are required. Please fill in all the required fields.");
+      return;
+    }
+  
+    // Check if the checkbox is checked
+    const termsCheckbox = document.getElementById("terms");
+  
+    if (!termsCheckbox.checked) {
+      alert("Please agree to the Terms & Conditions before signing up.");
+      return;
+    }
 
-    axios
-      .post("/api/register", formData) // Send the form data to the server
-      .then((response) => {
-        console.log("Registration successful");
-        // Reset form fields
-        setFormData({
-          name: "",
-          surname: "",
-          phoneNumber: "",
-          email: "",
-          password: "",
-        });
-      })
-      .catch((error) => {
-        console.error("Error registering user", error);
-        // Handle registration error
+    try {
+      // Create a new user with email and password
+      const newUserCredential = await auth.createUserWithEmailAndPassword(
+      formData.email,
+      formData.password
+      );
+      const newUser = newUserCredential.user;
+      await firestore.collection("users").doc(newUser.uid).set({
+        firstName: formData.name,
+        lastName: formData.surname,
+        phoneNumber: formData.phoneNumber,
+        email: formData.email,
       });
+      alert("Registration successful");
+      console.log("Registration successful");
+      // Reset form fields
+      setFormData({
+        name: "",
+        surname: "",
+        phoneNumber: "",
+        email: "",
+        password: "",
+      });
+    } catch (error) {
+      console.error("Error registering user", error);
+      // Handle registration error
+    }
   };
+
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <HeroPages name="Register" />
@@ -67,7 +96,7 @@ function Register() {
               <h3>First Name</h3>
               <input
                 type="text"
-                name="firstName"
+                name="name"
                 value={formData.name}
                 placeholder="Enter Your First Name"
                 onChange={handleChange}
@@ -77,7 +106,7 @@ function Register() {
               <h3>Last Name</h3>
               <input
                 type="text"
-                name="lastName"
+                name="surname"
                 value={formData.surname}
                 placeholder="Enter Your Last Name"
                 onChange={handleChange}
@@ -121,7 +150,7 @@ function Register() {
           </div>
 
           <div className="input-group">
-            <input type="checkbox" id="terms" />
+            <input type="checkbox" id="terms" required  />
             <label htmlFor="terms">
               By Signing up I agree with <Link to="/conditions"  onClick={() => window.scrollTo(0,0)}>
               Terms & Conditions

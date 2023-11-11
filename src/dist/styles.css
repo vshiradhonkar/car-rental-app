@@ -2509,8 +2509,7 @@ footer {
   align-items: center;
   height: 49.25vh;
   z-index: 1;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 .text1 {
   text-decoration: none;
@@ -2519,10 +2518,11 @@ footer {
   color: #6200ff;
 }
 .background-image {
+  margin-top: 20px;
   position: absolute;
   top: 0;
   width: 50vh;
-  height: 50vh;
+  height: 58vh;
   background-image: url("/src/images/Login/65042363_e43aaa.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -2535,13 +2535,13 @@ footer {
 .login-form {
   position: relative;
   z-index: 2;
-  padding: 60px 0px 0px 0px;
+  padding: 35px 0px 0px 0px;
   align-self: center; /* Center the form horizontally */
   margin-top: 50px; /* Add margin-top to create space between h2 and the form */
 }
 .loginpasseye {
   position: absolute;
-  top: 66%;
+  top: 63%;
   right: 6px;
   transform: translateY(-50%);
   background: none;
@@ -2564,7 +2564,6 @@ footer {
     align-items: center;
     gap: 1rem;
     text-align: center;
-    margin-top: 90px;
     padding: 90px 28px 0 28px;
   }
   .background-image {
