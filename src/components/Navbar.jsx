@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import Logo from "../images/Navbar/Car Rental.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+import { auth } from "../firebase";
+
 function Navbar() {
   const [nav, setNav] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isUserSignedIn, setIsUserSignedIn] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +22,27 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsUserSignedIn(!!user);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const navbarClass = scrollPosition > 0 ? "navbar navbar-blur" : "navbar";
   const openNav = () => {
     setNav(!nav);
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await auth.signOut();
+      alert("Signed out successfully. Thank You!");
+    } catch (error) {
+      console.error("Error signing out", error);
+    }
   };
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,16 +97,34 @@ function Navbar() {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/sign-in">
-                Sign in
-              </Link>
+            {
+              isUserSignedIn ? (
+                <>
+                <li>
+                <Link onClick={() => window.scrollTo(0, 0)} to="/history">
+                  Rental History
+                </Link></li>
+                <li>
+                <Link onClick={handleSignOut} to="/" >
+                  Sign out
+                </Link>
+              </li>
+              </>
+            ) : (
+              <>
+              <li>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/sign-in">
+              Sign in
+            </Link>
             </li>
             <li>
-              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/register">
-                Register
-              </Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/register">
+              Register
+            </Link>
             </li>
+            </>
+            )
+            }
           </ul>
         </div>
 
@@ -131,12 +169,25 @@ function Navbar() {
             </li>
           </ul>
           <div className="navbar_buttons">
-            <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_sign-in" to="/sign-in">
+            {
+              isUserSignedIn ? (<>
+                <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_sign-in" to="/history">
+                  Rental History
+                </Link>
+                <Link onClick={handleSignOut} className="navbar_buttons_sign-in" to="/">
+                  Sign out
+                </Link>
+              </>
+            ) : (<>
+              <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_sign-in" to="/sign-in">
               Sign in
             </Link>
             <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_register" to="/register">
               Register
             </Link>
+            </>
+            )
+            }
           </div>
 
           {/* for Mobile */}

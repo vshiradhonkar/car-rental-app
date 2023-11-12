@@ -10,6 +10,7 @@ import Team from "./pages/Team";
 import Register from "./pages/Register";
 import Conditions from './pages/Conditions';
 import {AnimatePresence} from 'framer-motion';
+import History from './pages/History';
 
 function AnimatedRoutes() {
     const location = useLocation();
@@ -27,6 +28,7 @@ return (
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/register" element={<Register />} />
             <Route path="/conditions" element={<Conditions />} />
+            <Route path="/history" element={<History />} />
         </Routes>
     </AnimatePresence>
     </div>
