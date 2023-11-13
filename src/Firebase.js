@@ -22,4 +22,8 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
+// Set persistence to 'session'
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+
+
 export { auth, firestore }; // Add this line to export 'firestore'

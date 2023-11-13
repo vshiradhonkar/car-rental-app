@@ -80,7 +80,12 @@ body {
 *::-webkit-scrollbar-thumb:active {
   background-color: #6200ff;
 }
-
+.react_loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .navbar {
   max-width: 133rem;
   width: 100%;
