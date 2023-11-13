@@ -174,7 +174,7 @@ function Navbar() {
                 <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_sign-in" to="/history">
                   Rental History
                 </Link>
-                <Link onClick={handleSignOut} className="navbar_buttons_sign-in" to="/">
+                <Link onClick={handleSignOut} className="navbar_buttons_sign-out" to="/">
                   Sign out
                 </Link>
               </>

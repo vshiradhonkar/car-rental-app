@@ -167,10 +167,22 @@ body {
 .navbar_buttons_sign-in {
   color: #000000;
   transition: all 0.3s;
+  padding-right: 10px;
 }
 
 .navbar_buttons_sign-in:hover {
   color: #ad21ff;
+}
+
+.navbar_buttons_sign-out {
+  color: #000000;
+  transition: all 0.3s;
+  padding-right: 10px;
+}
+
+.navbar_buttons_sign-out:hover {
+  color: #ad21ff;
+  text-shadow: -3px 0px 5px #d09cfa;
 }
 
 .navbar_buttons_register {
