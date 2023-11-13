@@ -16,7 +16,6 @@ const rentalHistoryData = [
     pickUpLocation: "City A",
     dropOffLocation: "City B",
     },
-    // Add more rental history entries as needed
 ];
 
 return (
@@ -33,7 +32,7 @@ return (
                 <th>Pick-up Location</th>
                 <th>Drop-off Location</th>
             </tr>
-        </thead>
+            </thead>
         <tbody>
             {rentalHistoryData.map((historyItem) => (
             <tr key={historyItem.id}>

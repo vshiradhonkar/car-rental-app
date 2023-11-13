@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
+import { firestore } from "../firebase";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = async () => {
+    try {
+      if (email) {
+        // Add the email to the 'subscriptions' collection in Firestore
+        await firestore.collection("subscriptions").add({
+          email,
+          timestamp: new Date(),
+        });
+
+        // Clear the input field after successful subscription
+        setEmail("");
+
+        alert("Thank you for subscribing!");
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      alert("An error occurred while subscribing. Please try again later.");
+    }
+  };
+
   return (
     <>
       <footer>
@@ -77,10 +101,12 @@ function Footer() {
                   type="email"
                   name="email"
                   placeholder="Enter Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </li>
               <li>
-                <button className="submit-email">Submit</button>
+                <button className="submit-email" onClick={handleSubscribe} >Submit</button>
               </li>
             </ul>
           </div>

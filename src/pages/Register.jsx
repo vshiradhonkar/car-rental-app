@@ -71,6 +71,7 @@ function Register() {
         password: "",
       });
     } catch (error) {
+      alert("An error occurred. Please try again later, Thank You!")
       console.error("Error registering user", error);
       // Handle registration error
     }
