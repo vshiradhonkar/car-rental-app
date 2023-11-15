@@ -2254,18 +2254,21 @@ footer {
 
 .models-div_box_descr_name-price_btn {
   background-color: #ad21ff;
+  text-decoration: none;
+  color: white;
+  font-weight: 750;
   padding: 1.8rem 3rem;
   border-radius: 0.3rem;
   box-shadow: 0 10px 15px 0 rgba(144, 24, 255, 0.5);
   transition: all 0.3s;
   border: 2px solid #ad21ff;
   font-size: 1.8rem;
-  cursor: pointer;
 }
 
 .models-div_box_descr_name-price_btn:hover {
   box-shadow: 0 10px 15px 0 rgba(144, 24, 255, 0.5);
   background-color: #6200ff;
+  color: black;
 }
 
 .models-div_box_descr_name-price_btn a {

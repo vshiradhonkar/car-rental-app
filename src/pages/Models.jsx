@@ -65,11 +65,9 @@ function Models() {
                       <FontAwesomeIcon icon={faCarSide} />
                     </span>
                   </div>
-                  <div className="models-div_box_descr_name-price_btn">
-                    <Link onClick={() => window.scrollTo(0, 490)} to="/">
+                  <Link className="models-div_box_descr_name-price_btn" onClick={() => window.scrollTo(0, 490)} to="/" >
                       Book Ride
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -112,11 +110,9 @@ function Models() {
                       <FontAwesomeIcon icon={faCarSide} />
                     </span>
                   </div>
-                  <div className="models-div_box_descr_name-price_btn">
-                    <Link onClick={() => window.scrollTo(0,490)} to="/">
+                  <Link className="models-div_box_descr_name-price_btn" onClick={() => window.scrollTo(0, 490)} to="/" >
                       Book Ride
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -159,11 +155,9 @@ function Models() {
                       <FontAwesomeIcon icon={faCarSide} />
                     </span>
                   </div>
-                  <div className="models-div_box_descr_name-price_btn">
-                    <Link onClick={() => window.scrollTo(0, 490)} to="/">
+                  <Link className="models-div_box_descr_name-price_btn" onClick={() => window.scrollTo(0, 490)} to="/" >
                       Book Ride
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -206,11 +200,9 @@ function Models() {
                       <FontAwesomeIcon icon={faCarSide} />
                     </span>
                   </div>
-                  <div className="models-div_box_descr_name-price_btn">
-                    <Link onClick={() => window.scrollTo(0, 490)} to="/">
+                  <Link className="models-div_box_descr_name-price_btn" onClick={() => window.scrollTo(0, 490)} to="/" >
                       Book Ride
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -252,11 +244,9 @@ function Models() {
                       <FontAwesomeIcon icon={faCarSide} />
                     </span>
                   </div>
-                  <div className="models-div_box_descr_name-price_btn">
-                    <Link onClick={() => window.scrollTo(0, 490)} to="/">
+                  <Link className="models-div_box_descr_name-price_btn" onClick={() => window.scrollTo(0, 490)} to="/" >
                       Book Ride
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -299,11 +289,9 @@ function Models() {
                       <FontAwesomeIcon icon={faCarSide} />
                     </span>
                   </div>
-                  <div className="models-div_box_descr_name-price_btn">
-                    <Link onClick={() => window.scrollTo(0, 490)} to="/">
+                  <Link className="models-div_box_descr_name-price_btn" onClick={() => window.scrollTo(0, 490)} to="/" >
                       Book Ride
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>

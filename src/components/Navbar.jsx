@@ -101,7 +101,7 @@ function Navbar() {
               isUserSignedIn ? (
                 <>
                 <li>
-                <Link onClick={() => window.scrollTo(0, 0)} to="/history">
+                <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/history">
                   Rental History
                 </Link></li>
                 <li>
@@ -113,12 +113,12 @@ function Navbar() {
             ) : (
               <>
               <li>
-              <Link onClick={() => window.scrollTo(0, 0)} to="/sign-in">
+              <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/sign-in">
               Sign in
             </Link>
             </li>
             <li>
-            <Link onClick={() => window.scrollTo(0, 0)} to="/register">
+            <Link onClick={() => { openNav(); window.scrollTo(0, 0); }} to="/register">
               Register
             </Link>
             </li>

@@ -68,7 +68,7 @@ function History() {
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
         {!loading && !error && rentalHistoryData.length === 0 && (<div className='no-history'>
-          <p >Explore our premium cars and start building your rental history with us today! <NavLink to="/" style={{ textDecoration: 'none', color:"#ad21ff" }}>Book Now</NavLink>.</p>
+        <NavLink to="/" style={{ textDecoration: 'none', color:"#ad21ff" }}>Explore our premium cars and start building your rental history with us today! Book Now.</NavLink>
           </div>)}
 
         {!loading && !error && rentalHistoryData.length > 0 && (
