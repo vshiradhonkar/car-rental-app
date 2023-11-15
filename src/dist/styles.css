@@ -2910,7 +2910,6 @@ label {
   }
 }
 /* terms & Conditions page starts here */
-/* Styles for the container of all conditions */
 
 .termsheading {
   display: flex;
@@ -2996,5 +2995,72 @@ label {
   .allconditions p {
     font-size: 1.2rem;
     text-align: left;
+  }
+}
+
+/* rental history page starts here */
+
+.history {
+  color: #333;
+  padding: 50px 0;
+}
+
+.history-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.history h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.history-table th {
+  background-color: #f2f2f2;
+}
+.no-history {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #ad21ff;
+  font-weight: 750;
+}
+.no-history:hover {
+  color: black;
+  text-shadow: -3px 0px 5px #d09cfa;
+}
+/* Responsive styles for history component */
+@media (max-width: 768px) {
+  .history-table th,
+  .history-table td {
+    font-size: 1rem; /* Adjust the font size for smaller screens */
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .no-history {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #ad21ff;
+    font-weight: 750;
   }
 }

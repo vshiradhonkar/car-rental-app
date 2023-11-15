@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getFirestore, collection, addDoc } from 'firebase/firestore'
+import { getAuth } from 'firebase/auth';
+
+
 import carAudi from "../images/cars-big/audi.png";
 import carMc from "../images/cars-big/McLerean.jpg";
 import carFerrari from "../images/cars-big/Ferrari.jpg";
 import carCamaro from "../images/cars-big/camaro.jpg";
 import carAven from "../images/cars-big/aventador.jpg";
 import carPorsche from "../images/cars-big/panamera-turbo.jpg";
-import { Link } from "react-router-dom";
 
 function BookCar() {
   const [modal, setModal] = useState(false);
 
   const [carType, setCarType] = useState("");
-
   const [pickUp, setPickup] = useState("");
   const [dropOff, setDropOff] = useState("");
   const [pickTime, setPickTime] = useState("");
@@ -26,6 +29,9 @@ function BookCar() {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [zip, setZip] = useState("");
+
+  const db = getFirestore();
+  const auth = getAuth();
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -78,25 +84,121 @@ function BookCar() {
     }
   };
 
+  
+
+  
   useEffect(() => {
     if (modal === true) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     }
   }, [modal]);
 
-  const confirmBooking = (e) => {
-    e.preventDefault();
+  const confirmBooking = async (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+
+    try {
+      const user = auth.currentUser;
+      if (user) {
+        const bookingRef = await addDoc(collection(db, `users/${user.uid}/bookings`), {
+          carType,
+          pickUp,
+          dropOff,
+          pickTime,
+          dropTime,
+          name,
+          lastName,
+          phone,
+          age,
+          email,
+          address,
+          city,
+          zip,
+        });
+
+        console.log('Booking added with ID: ', bookingRef.id);
+      }
+    } catch (error) {
+      console.error('Error adding booking: ', error);
+    }
+
+    const historyData = {
+      carType,
+      pickUp,
+      dropOff,
+      pickUpTime: pickTime,
+      dropOffTime: dropTime, 
+
+    };
+    localStorage.setItem('bookingData', JSON.stringify(historyData));
+
     setModal(!modal);
-    const doneMsg = document.querySelector(".booking-done");
-    doneMsg.style.display = "flex";
+    const doneMsg = document.querySelector('.booking-done');
+    doneMsg.style.display = 'flex';
+    alert('Booking was successful, Thank You!');
   };
 
-  const handleCar = (e) => {
-    setCarType(e.target.value);
-    setCarImg(e.target.value);
+  const handleReserveNow = (e) => {
+    e.preventDefault();
+    const checkbox = document.querySelector('input[type="checkbox"]');
+    if (!checkbox.checked) {
+      alert('Please agree to the Terms & Conditions.');
+      return;
+    }
+    if (
+      name === '' ||
+      lastName === '' ||
+      phone === '' ||
+      age === '' ||
+      email === '' ||
+      address === '' ||
+      city === '' ||
+      zip === ''
+    ) {
+      // Show an alert if any required field is empty
+      alert('Please fill in all required fields!');
+    } else {
+      confirmBooking();
+    }
   };
+
+
+
+
+  const handleCar = (e) => {
+    const selectedCarType = e.target.value;
+
+    // Update carType state
+    setCarType(selectedCarType);
+
+    // Update carImg state based on the selected car type
+    switch (selectedCarType) {
+      case "Audi Q7":
+        setCarImg(carAudi);
+        break;
+      case "Chevrolet Camaro":
+        setCarImg(carCamaro);
+        break;
+      case "McLeren P7":
+        setCarImg(carMc);
+        break;
+      case "Ferrari LaFerrari":
+        setCarImg(carFerrari);
+        break;
+      case "Lamborghini Aventador":
+        setCarImg(carAven);
+        break;
+      case "Porsche Panamera turbo":
+        setCarImg(carPorsche);
+        break;
+      default:
+        setCarImg(""); // Set to an empty string if no match
+    }
+  };
+
   const handlePick = (e) => {
     setPickup(e.target.value);
   };
@@ -110,36 +212,35 @@ function BookCar() {
     setDropTime(e.target.value);
   };
 
-  let imgUrl;
-  switch (carImg) {
-    case "Audi Q7":
-      imgUrl = carAudi;
-      break;
-    case "Chevrolet Camaro":
-      imgUrl = carCamaro;
-      break;
-    case "McLerean P7":
-      imgUrl = carMc;
-      break;
-    case "Ferrari LaFerrari":
-      imgUrl = carFerrari;
-      break;
-    case "Lamborghini Aventador":
-      imgUrl = carAven;
-      break;
-    case "Porsche Panamera turbo":
-      imgUrl = carPorsche;
-      break;
-
-    default:
-      imgUrl = "";
-  }
-
   const hideMessage = () => {
     const doneMsg = document.querySelector(".booking-done");
     doneMsg.style.display = "none";
   };
-  
+
+  let imgUrl;
+  switch (carImg) {
+    case carAudi:
+      imgUrl = carAudi;
+      break;
+    case carCamaro:
+      imgUrl = carCamaro;
+      break;
+    case carMc:
+      imgUrl = carMc;
+      break;
+    case carFerrari:
+      imgUrl = carFerrari;
+      break;
+    case carAven:
+      imgUrl = carAven;
+      break;
+    case carPorsche:
+      imgUrl = carPorsche;
+      break;
+    default:
+      imgUrl = "";
+  }
+
 
   return (
     <>
@@ -353,6 +454,7 @@ function BookCar() {
                   value={name}
                   onChange={handleName}
                   placeholder="Enter Your First Name"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
@@ -366,6 +468,7 @@ function BookCar() {
                   value={lastName}
                   onChange={handleLastName}
                   placeholder="Enter Your Last Name"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
@@ -379,6 +482,7 @@ function BookCar() {
                   value={phone}
                   onChange={handlePhone}
                   placeholder="Enter Your Phone Number"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
@@ -392,6 +496,7 @@ function BookCar() {
                   value={age}
                   onChange={handleAge}
                   placeholder="18"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
@@ -407,6 +512,7 @@ function BookCar() {
                   type="email"
                   onChange={handleEmail}
                   placeholder="Enter your Email Address"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
@@ -420,6 +526,7 @@ function BookCar() {
                   type="text"
                   onChange={handleAddress}
                   placeholder="Enter your Street Address"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
@@ -433,6 +540,7 @@ function BookCar() {
                   type="text"
                   onChange={handleCity}
                   placeholder="Enter your City"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
@@ -446,16 +554,17 @@ function BookCar() {
                   onChange={handleZip}
                   value={zip}
                   placeholder="Enter your Zip Code"
+                  required
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
             </div>
             <span className="info-form_checkbox">
-              <input type="checkbox" />
+              <input type="checkbox" required/>
               <p>I agree to all <Link  to="/conditions" style={{ textDecoration: 'none' }}><strong>Terms & Conditions*</strong></Link></p>
             </span>
             <div className="reserve-button">
-              <button onClick={confirmBooking}>Reserve Now</button>
+              <button onClick={handleReserveNow}>Reserve Now</button>
             </div>
           </form>
         </div>

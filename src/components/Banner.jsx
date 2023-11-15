@@ -6,9 +6,7 @@ function Banner() {
                     <div className="banner-content">
                         <div className="banner-content_text">
                             <h2>Save <strong>Huge</strong> with out Cheap rental..</h2>
-                            <p>
-                                Top Airports , Local Suppliers. <span>24/7</span> Support.
-                            </p>
+                            <p>Discover a wide range of vehicles from trusted local suppliers.<span>24/7</span> support</p>
                         </div>
                     </div>
                 </div>
