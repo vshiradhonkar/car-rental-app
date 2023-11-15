@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function CarBox({ data, carID }) {
   const [carLoad, setCarLoad] = useState(true);
@@ -60,9 +61,9 @@ function CarBox({ data, carID }) {
 
             </div>
 
-            <a href="/" className="cta-btn">
+            <Link href="/" onClick={() => window.scrollTo(0, 490)} className="cta-btn">
                 Reserve Now
-            </a>
+            </Link>
           </div>
         </div>
       ))}
