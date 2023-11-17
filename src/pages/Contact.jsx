@@ -12,6 +12,8 @@ import ScrollTop from "../components/ScrollTop";
 import {motion} from "framer-motion";
 import { firestore } from "../firebase";
 import Modal from "react-modal";
+import Lottie from "react-lottie";
+import animationData from "../Animations/contact animation.json";
 
 
 function Contact() {
@@ -56,11 +58,22 @@ function Contact() {
     // Close the modal and reset the state
     setIsModalOpen(false);
   };
+  const lottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <section className="contact-page">
         <HeroPages name="Contact" />
+        <div className="contact-div_lottie">
+            <Lottie options={lottieOptions} height={300} width={400} />
+        </div>
         <div className="container">
           <div className="contact-div">
             <div className="contact-div_text">
@@ -80,7 +93,11 @@ function Contact() {
                 <FontAwesomeIcon icon={faLocationDot} />
                 &nbsp; Los Santos
               </a>
+              
             </div>
+
+            
+
             <div className="contact-div_form">
               <form onSubmit={handleSubmit}>
                 <label>
@@ -114,7 +131,7 @@ function Contact() {
         <button className="contact-modal-button" onClick={closeModal}>OK</button>
       
       </Modal>
-
+      
 
           </div>
         </div>

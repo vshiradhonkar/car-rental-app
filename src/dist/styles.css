@@ -2464,6 +2464,12 @@ footer {
   box-shadow: 0 10px 15px 0 rgba(144, 24, 255, 0.5);
   background-color: #6200ff;
 }
+.contact-div_lottie {
+  position: absolute;
+  top: 690px;
+  padding-left: 180px;
+  z-index: -1;
+}
 
 /* contact page modal */
 @media (max-width: 950px) {
@@ -2472,6 +2478,10 @@ footer {
   }
   .contact-modal p {
     text-align: center;
+  }
+
+  .contact-div_lottie {
+    padding-left: 1800px;
   }
 }
 .contact-modal {
