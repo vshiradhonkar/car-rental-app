@@ -65,7 +65,7 @@ export const CAR_DATA = [
 ],
 [
     {
-        name: "McLaren p7",
+        name: "McLaren P7",
         price: "36000",
         img: mc,
         model : "p7",

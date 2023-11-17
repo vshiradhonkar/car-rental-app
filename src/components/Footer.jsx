@@ -71,16 +71,16 @@ function Footer() {
                 <a href="https://www.google.com/maps?sca_esv=581540659&sxsrf=AM9HkKkr1WFLXzsN_ZFDWPYgaODa-PqvPw:1699719139900&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAiDCBMb3MgQW5nZWxlczIKEC4YigUYsQMYQzIIEAAYigUYkQIyDRAuGIoFGLEDGIMBGEMyCBAAGIoFGJECMg4QLhiKBRixAxiDARiRAjIIEAAYigUYkQIyCBAAGIoFGJECMg0QLhiKBRixAxiDARhDMgoQABiKBRixAxhDMgoQABiKBRixAxhDMhkQLhiKBRixAxhDGJcFGNwEGN4EGOAE2AEBSIEGUABYAHAAeAGQAQCYAbIBoAGyAaoBAzAuMbgBA8gBAPgBAvgBAeIDBBgAIEGIBgG6BgYIARABGBQ&q=Los+Angeles&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiM4K-iq7yCAxW2klYBHVKgAYsQ_AUoA3oECAIQBQ">Los Santos</a>
               </li>
               <li>
-                <a href="#home">Careers</a>
+                <a href="#/">Careers</a>
               </li>
               <li>
-                <a href="#home">Mobile</a>
+                <a href="#/">Mobile</a>
               </li>
               <li>
-                <a href="#home">Blog</a>
+                <a href="#/">Blog</a>
               </li>
               <li>
-                <a href="#home">How we work</a>
+                <a href="#/">How we work</a>
               </li>
             </ul>
 
@@ -100,7 +100,7 @@ function Footer() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Enter Email Address"
+                  placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />

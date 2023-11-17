@@ -35,7 +35,8 @@ function History() {
               pickUpDate: data.pickTime,
               dropOffDate: data.dropTime,
               pickUpLocation: data.pickUp,
-              dropOffLocation: data.dropOff, 
+              dropOffLocation: data.dropOff,
+              totalAmount: data.totalAmount,
             });
           });
           setRentalHistoryData(historyData);
@@ -80,6 +81,7 @@ function History() {
                 <th>Drop-off Date</th>
                 <th>Pick-up Location</th>
                 <th>Drop-off Location</th>
+                <th>Total Amount</th>
               </tr>
             </thead>
             <tbody>
@@ -90,6 +92,11 @@ function History() {
                   <td>{historyItem.dropOffDate}</td>
                   <td>{historyItem.pickUpLocation}</td>
                   <td>{historyItem.dropOffLocation}</td>
+                  <td>
+                  {typeof historyItem.totalAmount === 'number'
+                    ? `$${historyItem.totalAmount}`
+                    : 'N/A'}  
+                  </td>
                 </tr>
               ))}
             </tbody>

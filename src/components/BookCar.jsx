@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth';
+import { CAR_DATA } from "./CarData";
 
 
 import carAudi from "../images/cars-big/audi.png";
@@ -30,8 +31,46 @@ function BookCar() {
   const [city, setCity] = useState("");
   const [zip, setZip] = useState("");
 
+  // eslint-disable-next-line
+  const [totalAmount, setTotalAmount] = useState(0);
+
   const db = getFirestore();
   const auth = getAuth();
+
+// Function to calculate the order amount
+  const calculateOrderAmount = () => {
+    const selectedCar = CAR_DATA.flat().find((car) => car.name === carType);
+  
+    const dailyRate = selectedCar ? parseFloat(selectedCar.price) : 0;
+  
+    const startDate = new Date(pickTime);
+    const endDate = new Date(dropTime);
+  
+    console.log('startDate:', startDate);
+    console.log('endDate:', endDate);
+  
+    const timeDifference = endDate.getTime() - startDate.getTime();
+    console.log('timeDifference:', timeDifference);
+  
+    let rentalDays = Math.ceil(timeDifference / (1000 * 3600 * 24));
+    console.log('rentalDays:', rentalDays);
+  
+    // Ensure at least one day for the rental
+    rentalDays = Math.max(rentalDays, 1);
+  
+    const totalAmount = dailyRate * rentalDays;
+  
+    // You can add more calculations based on additional factors
+    const additionalCosts = 0;
+  
+    // Add additional costs to the total amount
+    const totalAmountWithExtras = totalAmount + additionalCosts;
+  
+    console.log('totalAmountWithExtras:', totalAmountWithExtras);
+  
+    return totalAmountWithExtras;
+  };
+  
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -103,6 +142,7 @@ function BookCar() {
     try {
       const user = auth.currentUser;
       if (user) {
+        const amount = calculateOrderAmount();
         const bookingRef = await addDoc(collection(db, `users/${user.uid}/bookings`), {
           carType,
           pickUp,
@@ -117,9 +157,13 @@ function BookCar() {
           address,
           city,
           zip,
+          totalAmount: amount,
         });
 
         console.log('Booking added with ID: ', bookingRef.id);
+        
+        
+        setTotalAmount(amount);
       }
     } catch (error) {
       console.error('Error adding booking: ', error);
@@ -130,7 +174,8 @@ function BookCar() {
       pickUp,
       dropOff,
       pickUpTime: pickTime,
-      dropOffTime: dropTime, 
+      dropOffTime: dropTime,
+      totalAmount: calculateOrderAmount(), 
 
     };
     localStorage.setItem('bookingData', JSON.stringify(historyData));
@@ -160,7 +205,11 @@ function BookCar() {
     ) {
       // Show an alert if any required field is empty
       alert('Please fill in all required fields!');
-    } else {
+    }const amount = calculateOrderAmount();
+    if (amount === 0) {
+      alert('Sorry, cannot proceed with reservation because Total amount is $0.');
+    }
+    else {
       confirmBooking();
     }
   };
@@ -182,7 +231,7 @@ function BookCar() {
       case "Chevrolet Camaro":
         setCarImg(carCamaro);
         break;
-      case "McLeren P7":
+      case "McLaren P7":
         setCarImg(carMc);
         break;
       case "Ferrari LaFerrari":
@@ -191,7 +240,7 @@ function BookCar() {
       case "Lamborghini Aventador":
         setCarImg(carAven);
         break;
-      case "Porsche Panamera turbo":
+      case "Porsche Panamera Turbo":
         setCarImg(carPorsche);
         break;
       default:
@@ -276,7 +325,7 @@ function BookCar() {
                     <option>Select Your Car Type</option>
                     <option value="Audi Q7"> Audi A7 </option>
                     <option value="Chevrolet Camaro"> Chevrolet Camaro </option>
-                    <option value="McLeren P7"> McLeren P7 </option>
+                    <option value="McLaren P7"> McLaren P7 </option>
                     <option value="Ferrari LaFerrari">
                       {" "}
                       Ferrari LaFerrari{" "}
@@ -285,9 +334,9 @@ function BookCar() {
                       {" "}
                       Lamborghini Aventador{" "}
                     </option>
-                    <option value="Porsche Panamera turbo">
+                    <option value="Porsche Panamera Turbo">
                       {" "}
-                      Porsche Panamera turbo{" "}
+                      Porsche Panamera Turbo{" "}
                     </option>
                   </select>
                 </div>
@@ -563,9 +612,14 @@ function BookCar() {
               <input type="checkbox" required/>
               <p>I agree to all <Link  to="/conditions" style={{ textDecoration: 'none' }}><strong>Terms & Conditions*</strong></Link></p>
             </span>
+            <div className="booking-modal_total-amount">
+            <h5>Total Amount</h5>
+            <p>${calculateOrderAmount()}</p>
+            </div>
             <div className="reserve-button">
               <button onClick={handleReserveNow}>Reserve Now</button>
             </div>
+            
           </form>
         </div>
       </div>

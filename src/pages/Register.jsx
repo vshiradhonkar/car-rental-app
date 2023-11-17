@@ -105,7 +105,7 @@ function Register() {
               </svg>
             </Link>
           </div>
-          <h2 className="signup-head">or Sign Up With your email</h2>
+          <h2 className="signup-head">or Sign Up with your email</h2>
           <div className="name">
             <div className="input-group">
               <h3>First Name</h3>
