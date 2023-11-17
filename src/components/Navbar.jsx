@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../images/Navbar/Car Rental.png";
 import { FaBars, FaTimes } from "react-icons/fa";
-
-
 import { auth } from "../firebase";
 
 function Navbar() {

@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../components/Footer'
 import HeroPages from "../components/HeroPages"
 import PlanTrip from "../components/PlanTrip";
-import AboutMain from "../images/about/about-main.jpg";
+// import AboutMain from "../images/about/about-main.jpg";
 import Box1 from "../images/about/icon1.png";
 import Box2 from "../images/about/icon2.png";
 import Box3 from "../images/about/icon3.svg";
@@ -11,20 +11,33 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import ScrollTop from '../components/ScrollTop';
 import {motion} from "framer-motion";
 import Download from '../components/Download';
+import Lottie from "react-lottie";
+import animationData from "../Animations/about animation.json";
+
 
 
 function About() {
+  const lottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <section className="about-page">
         <HeroPages name="About" />
         <div className="container">
           <div className="about-main">
-            <img
+          <Lottie options={lottieOptions} height={"auto"} width={"auto"} />
+            {/* <img
               className="about-main_img"
               src={AboutMain}
               alt="car-renting"
-            />
+            /> */}
             <div className="about-main_text">
               <h3>About Company</h3>
               <h2>You start the engine and your adventure begins</h2>

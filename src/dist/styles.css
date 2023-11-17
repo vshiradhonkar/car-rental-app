@@ -404,8 +404,8 @@ body {
 .hero-content_car-img {
   z-index: 2;
   position: absolute;
-  right: 0;
-  width: 65%;
+  left: 38%;
+  width: 69%;
   margin-top: 5rem;
 }
 
@@ -2481,7 +2481,7 @@ footer {
   }
 
   .contact-div_lottie {
-    padding-left: 1800px;
+    padding-left: 18 00px;
   }
 }
 .contact-modal {
