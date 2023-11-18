@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/car-rental-app/static/css/main.b08a3228.css",
-    "main.js": "/car-rental-app/static/js/main.990dbc96.js",
+    "main.css": "/car-rental-app/static/css/main.0362bb63.css",
+    "main.js": "/car-rental-app/static/js/main.4fd67a7d.js",
     "static/media/heroes-bg.png": "/car-rental-app/static/media/heroes-bg.69cf767fa2a87c17b238.png",
     "static/media/65042363_e43aaa.jpg": "/car-rental-app/static/media/65042363_e43aaa.ea1adeff9d4163a7d2da.jpg",
     "static/media/main-img.png": "/car-rental-app/static/media/main-img.1358a4bc85c61c0c15a2.png",
     "static/media/car.png": "/car-rental-app/static/media/car.e89e43d63b1ffa676b12.png",
     "static/media/audi.png": "/car-rental-app/static/media/audi.c30af43b43ca3b2f6a3a.png",
+    "static/media/main-car.png": "/car-rental-app/static/media/main-car.b0cf0ea3a3ccb292a4ce.png",
     "static/media/bg-hero.png": "/car-rental-app/static/media/bg-hero.475f31fa04f08e8b9d86.png",
     "static/media/icon1.png": "/car-rental-app/static/media/icon1.113cb321c1d450c936b1.png",
     "static/media/icon2.png": "/car-rental-app/static/media/icon2.cb153fb3cab1aeb4af5d.png",
@@ -25,11 +26,11 @@
     "static/media/bg-contact.png": "/car-rental-app/static/media/bg-contact.c178c6db0f988d408d94.png",
     "static/media/icon3.svg": "/car-rental-app/static/media/icon3.0db16868dd6372474baffa495e575c09.svg",
     "index.html": "/car-rental-app/index.html",
-    "main.b08a3228.css.map": "/car-rental-app/static/css/main.b08a3228.css.map",
-    "main.990dbc96.js.map": "/car-rental-app/static/js/main.990dbc96.js.map"
+    "main.0362bb63.css.map": "/car-rental-app/static/css/main.0362bb63.css.map",
+    "main.4fd67a7d.js.map": "/car-rental-app/static/js/main.4fd67a7d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b08a3228.css",
-    "static/js/main.990dbc96.js"
+    "static/css/main.0362bb63.css",
+    "static/js/main.4fd67a7d.js"
   ]
 }

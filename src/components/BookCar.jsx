@@ -64,10 +64,9 @@ function BookCar() {
   
     const totalAmount = dailyRate * rentalDays;
   
-    // You can add more calculations based on additional factors
+
     const additionalCosts = 0;
-  
-    // Add additional costs to the total amount
+
     const totalAmountWithExtras = totalAmount + additionalCosts;
   
     console.log('totalAmountWithExtras:', totalAmountWithExtras);
@@ -172,7 +171,7 @@ function BookCar() {
         // Send confirmation email using EmailJS
         const emailParams = {
           to_name: name,
-          to_email: email,  // Use the user's email collected from the form
+          to_email: email, 
           from_name: "Car Rental Services",
           message: "Your booking was successful. Thank you!",
           currentDate,
@@ -192,7 +191,7 @@ function BookCar() {
           userZip: zip,
         };
   
-        // 'service_your_service_id' and 'template_your_template_id' are placeholders; replace them with your actual EmailJS service and template IDs
+        // 'service_your_service_id' and 'template_your_template_id' 
         const emailResponse = await emailjs.send(
           'service_2p5z0ka',
           'template_2yjjf7e',

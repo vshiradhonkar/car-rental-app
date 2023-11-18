@@ -16,7 +16,6 @@ function AnimatedRoutes() {
     const location = useLocation();
 return (
     <div>
-    
     <AnimatePresence>
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
