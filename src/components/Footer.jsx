@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import { firestore } from "../firebase";
 
 function Footer() {
@@ -58,7 +59,6 @@ function Footer() {
                   href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNqbwNXQMpXbQgKsfFPrCvbsdLxwCgmTQCWCqSGrwdNDWPLnvHKNcLfSlzCTncJfRnpwL"
                   rel="noreferrer"
                   target="_blank"
-                  
                 >
                   Design by Winter
                 </a>
@@ -71,16 +71,16 @@ function Footer() {
                 <a href="https://www.google.com/maps?sca_esv=581540659&sxsrf=AM9HkKkr1WFLXzsN_ZFDWPYgaODa-PqvPw:1699719139900&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAiDCBMb3MgQW5nZWxlczIKEC4YigUYsQMYQzIIEAAYigUYkQIyDRAuGIoFGLEDGIMBGEMyCBAAGIoFGJECMg4QLhiKBRixAxiDARiRAjIIEAAYigUYkQIyCBAAGIoFGJECMg0QLhiKBRixAxiDARhDMgoQABiKBRixAxhDMgoQABiKBRixAxhDMhkQLhiKBRixAxhDGJcFGNwEGN4EGOAE2AEBSIEGUABYAHAAeAGQAQCYAbIBoAGyAaoBAzAuMbgBA8gBAPgBAvgBAeIDBBgAIEGIBgG6BgYIARABGBQ&q=Los+Angeles&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiM4K-iq7yCAxW2klYBHVKgAYsQ_AUoA3oECAIQBQ">Los Santos</a>
               </li>
               <li>
-                <a href="#/">Careers</a>
+                <Link to="/404">Careers</Link>
               </li>
               <li>
-                <a href="#/">Mobile</a>
+                <Link to="/404">Mobile</Link>
               </li>
               <li>
-                <a href="#/">Blog</a>
+                <Link to="/404">Blog</Link>
               </li>
               <li>
-                <a href="#/">How we work</a>
+                <Link to="/404">How we work</Link>
               </li>
             </ul>
 

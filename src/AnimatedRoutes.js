@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import Conditions from './pages/Conditions';
 import {AnimatePresence} from 'framer-motion';
 import History from './pages/History';
+import NotFound from './components/NotFound';
 
 function AnimatedRoutes() {
     const location = useLocation();
@@ -28,6 +29,7 @@ return (
             <Route path="/register" element={<Register />} />
             <Route path="/conditions" element={<Conditions />} />
             <Route path="/history" element={<History />} />
+            <Route path="/404" element={<NotFound />} />
         </Routes>
     </AnimatePresence>
     </div>
