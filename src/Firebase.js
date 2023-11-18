@@ -1,6 +1,9 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import emailjs from 'emailjs-com';
+
+emailjs.init("_H59xsezjb2loQduM");
 
 const firebaseConfig = {
   apiKey: "AIzaSyDh39ylyUqo7MR5fBk6dkYz9rm2F9A1a0Q",
@@ -33,3 +36,10 @@ const signInWithGoogle = async () => {
 };
 
 export { auth, firestore, signInWithGoogle };
+
+
+
+// template id : template_2yjjf7e
+
+// service id : service_2p5z0ka
+// API key : _H59xsezjb2loQduM

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth';
 import { CAR_DATA } from "./CarData";
+import emailjs from 'emailjs-com';
+
 
 
 import carAudi from "../images/cars-big/audi.png";
@@ -30,6 +32,8 @@ function BookCar() {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [zip, setZip] = useState("");
+
+  
 
   // eslint-disable-next-line
   const [totalAmount, setTotalAmount] = useState(0);
@@ -138,10 +142,11 @@ function BookCar() {
     if (e) {
       e.preventDefault();
     }
-
+  
     try {
       const user = auth.currentUser;
       if (user) {
+        const currentDate = new Date().toLocaleDateString();
         const amount = calculateOrderAmount();
         const bookingRef = await addDoc(collection(db, `users/${user.uid}/bookings`), {
           carType,
@@ -159,32 +164,72 @@ function BookCar() {
           zip,
           totalAmount: amount,
         });
-
+  
         console.log('Booking added with ID: ', bookingRef.id);
         
-        
         setTotalAmount(amount);
+  
+        // Send confirmation email using EmailJS
+        const emailParams = {
+          to_name: name,
+          to_email: email,  // Use the user's email collected from the form
+          from_name: "Car Rental Services",
+          message: "Your booking was successful. Thank you!",
+          currentDate,
+          carType,
+          pickUpLocation: pickUp,
+          dropOffLocation: dropOff,
+          pickUpDate: pickTime,
+          dropOffDate: dropTime,
+          totalAmount,
+          userName: name,
+          userLastName: lastName,
+          userPhone: phone,
+          userAge: age,
+          userEmail: email,  
+          userAddress: address,
+          userCity: city,
+          userZip: zip,
+        };
+  
+        // 'service_your_service_id' and 'template_your_template_id' are placeholders; replace them with your actual EmailJS service and template IDs
+        const emailResponse = await emailjs.send(
+          'service_2p5z0ka',
+          'template_2yjjf7e',
+          emailParams
+        );
+  
+        console.log('Email sent successfully:', emailResponse);
       }
     } catch (error) {
       console.error('Error adding booking: ', error);
     }
-
+  
     const historyData = {
       carType,
       pickUp,
       dropOff,
       pickUpTime: pickTime,
       dropOffTime: dropTime,
-      totalAmount: calculateOrderAmount(), 
-
+      totalAmount: calculateOrderAmount(),
+      // Add other user information as needed
+      userName: name,
+      userLastName: lastName,
+      userPhone: phone,
+      userAge: age,
+      userEmail: email,
+      userAddress: address,
+      userCity: city,
+      userZip: zip,
     };
     localStorage.setItem('bookingData', JSON.stringify(historyData));
-
+  
     setModal(!modal);
     const doneMsg = document.querySelector('.booking-done');
     doneMsg.style.display = 'flex';
     alert('Booking was successful, Thank You!');
   };
+  
 
   const handleReserveNow = (e) => {
     e.preventDefault();

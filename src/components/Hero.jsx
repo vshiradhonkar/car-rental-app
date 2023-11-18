@@ -1,22 +1,22 @@
 import React from "react";
 import BgShape from "../images/cars-big/hero/bg-hero.png";
-// import HeroCar from "../images/cars-big/hero/main-car.png";
+import HeroCar from "../images/cars-big/hero/main-car.png";
 import { Link } from "react-router-dom";
 import ScrollTop from "./ScrollTop";
-import Lottie from "react-lottie";
-import animationData from "../Animations/hero animation.json";
+// import Lottie from "react-lottie";
+// import animationData from "../Animations/hero animation.json";
 
 
 function Hero() {
   
-  const lottieOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  // const lottieOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
   
   return (
     <>
@@ -44,10 +44,10 @@ function Hero() {
               </div>
             </div>
             {/* Images */}
-            <div className="hero-content_car-img">
+            {/* <div className="hero-content_car-img">
               <Lottie  options={lottieOptions} height={"auto"} width={"auto"} />
-            </div>
-            {/* <img src={HeroCar} alt="car-img" className="hero-content_car-img" /> */}
+            </div> */}
+            <img src={HeroCar} alt="car-img" className="hero-content_car-img" />
           </div>
         </div>
 
