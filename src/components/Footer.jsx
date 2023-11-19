@@ -109,6 +109,7 @@ function Footer() {
                 <button className="submit-email" onClick={handleSubscribe} >Submit</button>
               </li>
             </ul>
+
           </div>
         </div>
       </footer>

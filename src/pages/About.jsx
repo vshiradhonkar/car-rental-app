@@ -79,6 +79,9 @@ function About() {
           <br/>
           <PlanTrip />
           <ScrollTop/>
+          <p className='use-of_images'>
+        All images of brand cars used on this website are for educational purposes only.The copyrights of these images belong to their respective owners. This usage is in accordance with the principles of fair use for educational and informational purposes. These images are not used for commercial gain, and their inclusion does not imply any endorsement or affiliation with CAR Rental.
+        </p>
         </div>
       </section>
       <div className="book-banner">

@@ -219,6 +219,42 @@ body {
     display: flex;
   }
 }
+.confirmation-modal {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 24 24"><path d="M20.8,9.4,4.87,2.18A2,2,0,0,0,2.18,4.87h0L9.4,20.8A2,2,0,0,0,11.27,22h.25a2.26,2.26,0,0,0,2-1.8l1.13-5.58,5.58-1.13a2.26,2.26,0,0,0,1.8-2A2,2,0,0,0,20.8,9.4Z" style="fill: rgb(0, 0, 0);"></path></svg>'),
+    auto;
+  color: #010103;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border: 1px dotted white;
+  border-radius: 10px;
+}
+
+.confirmation-modal p {
+  margin-bottom: 20px;
+}
+
+.confirmation-modal button {
+  margin: 0 20px;
+  text-align: center;
+  background-color: #dbdbdb;
+  padding: 8px 8px;
+  font-size: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.confirmation-modal button:hover {
+  box-shadow: 5px 10px 15px 0 rgba(144, 24, 255, 0.5);
+  background-color: #6200ff;
+  color: black;
+}
 
 .mobile-navbar {
   display: flex;
@@ -2994,6 +3030,10 @@ label {
   margin-bottom: 15px;
   margin-left: 15px;
   flex-wrap: wrap;
+}
+.allconditions .use-of_images {
+  font-size: 1rem;
+  margin: 10px;
 }
 
 /* Responsive styles */

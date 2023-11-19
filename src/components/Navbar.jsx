@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../images/Navbar/Car Rental.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { auth } from "../firebase";
@@ -8,6 +8,9 @@ function Navbar() {
   const [nav, setNav] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,7 +18,6 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -35,14 +37,27 @@ function Navbar() {
     setNav(!nav);
   };
 
-  const handleSignOut = async () => {
+  const handleSignOut = () => {
+    document.body.classList.add('modal-open');
+    setShowConfirmation(true);
+  };
+  const handleMobileSignOut = () => {
+    setShowConfirmation(true);
+  };
+
+  const handleConfirmSignOut = async () => {
     try {
       await auth.signOut();
       alert("Signed out successfully. Thank You!");
+      navigate("/");
     } catch (error) {
       console.error("Error signing out", error);
+    } finally {
+      document.body.classList.remove('modal-open');
+      setShowConfirmation(false);
     }
   };
+
 
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
@@ -104,9 +119,17 @@ function Navbar() {
                   Rental History
                 </Link></li>
                 <li>
-                <Link onClick={handleSignOut} to="/" >
+                <Link onClick={handleMobileSignOut} >
                   Sign out
                 </Link>
+                {showConfirmation && (
+                  <div className="confirmation-modal">
+                    <p>Are you sure you want to sign out?</p>
+                    <button onClick={handleConfirmSignOut}>Yes</button>
+                    <button onClick={() => setShowConfirmation(false)}>No</button>
+                  </div>
+                )}
+
               </li>
               </>
             ) : (
@@ -173,7 +196,7 @@ function Navbar() {
                 <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_sign-in" to="/history">
                   Rental History
                 </Link>
-                <Link onClick={handleSignOut} className="navbar_buttons_sign-out" to="/">
+                <Link onClick={handleSignOut} className="navbar_buttons_sign-out">
                   Sign out
                 </Link>
               </>
@@ -187,8 +210,15 @@ function Navbar() {
             </>
             )
             }
+            
           </div>
-
+          {showConfirmation && (
+                  <div className="confirmation-modal">
+                    <p>Are you sure you want to sign out?</p>
+                    <button onClick={handleConfirmSignOut}>Yes</button>
+                    <button onClick={() => setShowConfirmation(false)}>No</button>
+                  </div>
+                )}
           {/* for Mobile */}
           <div className="mobile-hamb" onClick={openNav}>
             <FaBars />

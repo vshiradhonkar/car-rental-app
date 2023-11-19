@@ -490,8 +490,7 @@ function BookCar() {
             Upon Completing this reservation enquiry , You will recieve:
           </h4>
           <p>
-            Your Rental Voucher to produce on arrival at the rental desk and a
-            toll-free customer support Number.
+          Your rental voucher is to be presented upon arrival at the rental desk, along with a toll-free customer support number. Please note that pickup and drop-off times may vary based on availability
           </p>
         </div>
 
@@ -682,10 +681,14 @@ function BookCar() {
             <h5>Total Amount</h5>
             <p>${calculateOrderAmount()}</p>
             </div>
+            <p className="error-modal">After submitting the form, you'll receive an email with your reservation details, including car information, pickup/drop-off locations, scheduled times, 
+            and instructions for completing the full payment. Ensure payment is made to secure your booking. For assistance, contact our toll-free number or reach out 
+            through the website or email us at "carentalproject@gmail.com".
+            Safe travels!</p>
+
             <div className="reserve-button">
               <button onClick={handleReserveNow}>Reserve Now</button>
             </div>
-            
           </form>
         </div>
       </div>
