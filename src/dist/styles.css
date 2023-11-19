@@ -563,6 +563,9 @@ body {
   padding: 1.2rem 1.3rem;
   outline: none;
 }
+.book-content_box .box-form_car-type select:focus {
+  box-shadow: 0 0 5px #ae21ff65;
+}
 
 .book-content_box .box-form_car-type select:hover {
   color: black;
@@ -572,17 +575,25 @@ body {
   flex-direction: column;
   position: relative;
 }
+
 .book-content_box .box-form_car-time input:hover {
   color: black;
 }
 
 .book-content_box .box-form_car-time input {
-  outline: none;
-  color: #878585;
-  padding-right: 3rem;
+  font-size: 1.5rem;
+  color: #ababab;
+  font-family: "Rubik", sans-serif;
   border: 1px solid #ccd7e6;
+  border-radius: 3px;
+  font-weight: 400;
+  padding: 0.3rem 1.3rem;
+  box-sizing: border-box;
+  outline: none;
 }
-
+.book-content_box .box-form_car-time input:focus {
+  box-shadow: 0 0 5px #ae21ff65;
+}
 .book-content_box .box-form_car-time label {
   font-size: 1.6rem;
   font-weight: 600;
@@ -603,14 +614,14 @@ body {
 }
 
 .book-content_box button {
-  padding: 1.3rem 1.3rem;
+  padding: 1.5rem 1.3rem;
   height: -moz-fit-content;
   height: fit-content;
   align-self: self-end;
   border: none;
   font-family: "Rubik", sans-serif;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
   color: white;
   background-color: #ad21ff;
   box-shadow: 0 10px 15px rgba(144, 24, 255, 0.5);
@@ -619,7 +630,7 @@ body {
 }
 
 .book-content_box button:hover {
-  box-shadow: 0 10px 15px rgb(119, 0, 255);
+  box-shadow: 1px 10px 15px rgb(119, 0, 255);
 }
 
 .error-message {
