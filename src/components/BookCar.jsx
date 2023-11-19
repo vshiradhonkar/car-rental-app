@@ -33,7 +33,17 @@ function BookCar() {
   const [city, setCity] = useState("");
   const [zip, setZip] = useState("");
 
-  
+  const [inputPickupTime, setInputPickupTime] = useState("");
+  const [inputDropoffTime, setInputDropoffTime] = useState("");
+
+
+  const handleInputPickupTime = (e) => {
+    setInputPickupTime(e.target.value);
+  };
+
+  const handleInputDropoffTime = (e) => {
+    setInputDropoffTime(e.target.value);
+  };
 
   // eslint-disable-next-line
   const [totalAmount, setTotalAmount] = useState(0);
@@ -110,13 +120,17 @@ function BookCar() {
   const openModal = (e) => {
     e.preventDefault();
     const errorMsg = document.querySelector(".error-message");
-    if (
-      pickUp === "" ||
-      dropOff === "" ||
-      pickTime === "" ||
-      dropTime === "" ||
-      carType === ""
-    ) {
+    
+    const user = auth.currentUser;
+    
+    if (!user) {
+      errorMsg.innerHTML = "Sign In Required! <i className='fa-solid fa-xmark'></i>";
+      errorMsg.style.display = "flex";
+      return; // Exit the function if the user is not signed in
+    }
+  
+    if (pickUp === "" || dropOff === "" || pickTime === "" || dropTime === "" || carType === "") {
+      errorMsg.innerHTML = "All Fields Required! <i className='fa-solid fa-xmark'></i>";
       errorMsg.style.display = "flex";
     } else {
       setModal(!modal);
@@ -125,7 +139,6 @@ function BookCar() {
       errorMsg.style.display = "none";
     }
   };
-
   
 
   
@@ -153,6 +166,8 @@ function BookCar() {
           dropOff,
           pickTime,
           dropTime,
+          inputPickupTime,
+          inputDropoffTime,
           name,
           lastName,
           phone,
@@ -180,6 +195,8 @@ function BookCar() {
           dropOffLocation: dropOff,
           pickUpDate: pickTime,
           dropOffDate: dropTime,
+          inputPickupTime: inputPickupTime,
+          inputDropoffTime:inputDropoffTime,
           totalAmount,
           userName: name,
           userLastName: lastName,
@@ -211,7 +228,6 @@ function BookCar() {
       pickUpTime: pickTime,
       dropOffTime: dropTime,
       totalAmount: calculateOrderAmount(),
-      // Add other user information as needed
       userName: name,
       userLastName: lastName,
       userPhone: phone,
@@ -226,7 +242,7 @@ function BookCar() {
     setModal(!modal);
     const doneMsg = document.querySelector('.booking-done');
     doneMsg.style.display = 'flex';
-    alert('Booking was successful, Thank You!');
+    console.log('Booking was successful, Thank You!');
   };
   
 
@@ -245,7 +261,9 @@ function BookCar() {
       email === '' ||
       address === '' ||
       city === '' ||
-      zip === ''
+      zip === '' ||
+      inputPickupTime === '' || 
+      inputDropoffTime === ''
     ) {
       // Show an alert if any required field is empty
       alert('Please fill in all required fields!');
@@ -430,6 +448,7 @@ function BookCar() {
                     id="picktime"
                     value={pickTime}
                     onChange={handlePickTime}
+                    min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
 
@@ -443,11 +462,12 @@ function BookCar() {
                     id="droptime"
                     value={dropTime}
                     onChange={handleDropTime}
+                    min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
 
                 <button onClick={openModal} type="submit">
-                  Search
+                  Book Now
                 </button>
               </form>
             </div>
@@ -485,7 +505,7 @@ function BookCar() {
                 <div>
                   <h6>Pick-Up Date & Time</h6>
                   <p>
-                    {pickTime} / <input type="time" className="input-time" />
+                    {pickTime} / <input type="time" className="input-time" value={inputPickupTime} onChange={handleInputPickupTime} required/>
                   </p>
                 </div>
               </span>
@@ -497,7 +517,7 @@ function BookCar() {
                 <div>
                   <h6>Drop-Off Date & Time</h6>
                   <p>
-                    {dropTime} / <input type="time" className="input-time" />
+                    {dropTime} / <input type="time" className="input-time" value={inputDropoffTime} onChange={handleInputDropoffTime} required/>
                   </p>
                 </div>
               </span>
@@ -589,6 +609,8 @@ function BookCar() {
                   value={age}
                   onChange={handleAge}
                   placeholder="18"
+                  min="18"
+                  max="75"
                   required
                 />
                 <p className="error-modal">This is Required Field.</p>

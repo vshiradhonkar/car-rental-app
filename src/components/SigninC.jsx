@@ -30,6 +30,7 @@ const SigninC = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
+      console.log("Attempting sign-in...");
       await auth.signInWithEmailAndPassword(formData.email, formData.password);
       setFormData({
         email: "",
@@ -37,6 +38,7 @@ const SigninC = () => {
       });
 
       console.log("Sign-in successful");
+      
       setIsAlertOpen(true); // Open the alert for successful sign-in
     } catch (error) {
       console.error("Error signing in", error);
@@ -64,14 +66,22 @@ const SigninC = () => {
   }, [navigate]);
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle();
-      // After successful Google Sign-In, redirect to the home page
-      navigate('/');
-      alert("Sign-in successful. Thank You!")
+      const result = await signInWithGoogle();
+       // Check if the sign-in was successful
+      if (result.success) {
+        // After successful Google Sign-In, redirect to the home page
+        navigate('/');
+        alert("Sign-in successful. Thank You!");
+      } else {
+        // If there's an issue with sign-in, show an alert
+        console.error("Error during Google Sign-In:", result.error);
+        alert("Error signing in with Google. Please try again.");
+      }
+  
     } catch (error) {
       // If there's an error during Google Sign-In, show an alert
-      alert("Error signing in with Google. Please try again.");
-      console.error("Error handling Google Sign-In:", error);
+      
+      console.error("Error during Google Sign-In:", error);
     }
   };
 
@@ -111,8 +121,8 @@ const SigninC = () => {
             </button>
           </div>
           <div className="signUpGoogle">
-            <Link className="signUpGoogle" onClick={handleGoogleSignIn}>
-              Sign up with Google <pre> </pre>
+            <Link to="#" className="signUpGoogle" onClick={handleGoogleSignIn}>
+              Sign in with Google <pre> </pre>
               <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 488 512">
               <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
               </svg>

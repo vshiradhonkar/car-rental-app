@@ -80,16 +80,23 @@ function Register() {
   };
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle();
-      // After successful Google Sign-In, redirect to the home page
-      navigate("/");
-      alert("Sign-in successful. Thank You!")
+      const result = await signInWithGoogle();
+       // Check if the sign-in was successful
+      if (result.success) {
+        // After successful Google Sign-In, redirect to the home page
+        navigate('/');
+        alert("Sign-in successful. Thank You!");
+      } else {
+        // If there's an issue with sign-in, show an alert
+        console.error("Error during Google Sign-In:", result.error);
+        alert("Error signing in with Google. Please try again.");
+      }
     } catch (error) {
       // If there's an error during Google Sign-In, show an alert
-      alert("Error signing in with Google. Please try again.");
-      console.error("Error handling Google Sign-In:", error);
+      console.error("Error during Google Sign-In:", error);
     }
   };
+
 
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>

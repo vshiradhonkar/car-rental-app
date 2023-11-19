@@ -142,11 +142,12 @@ return (
             <br />
         <h1>29. International Travel</h1>
             <p>If you plan to travel to another country, please inform us in advance to ensure proper documentation.</p>
-
+            
             <br />
-        <h1>30. Environmental Responsibility</h1>
-            <p>We encourage responsible and eco-friendly driving to reduce the environmental impact of our rentals.</p>
-        <br/>
+        <h1>30. Changes to Booking Date and Time</h1>
+            <p>We reserve the right to change the booking date and time based on the availability of vehicles.</p>
+
+        <br />
 
         <p style={{color:"red", fontSize: "2rem"}}>*for more details contact customer care service*</p>
         <br/>
