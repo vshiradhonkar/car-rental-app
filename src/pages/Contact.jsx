@@ -87,7 +87,7 @@ function Contact() {
               </a>
               <a href="/">
                 <FontAwesomeIcon icon={faEnvelope} />
-                &nbsp; carrental@carental.com
+                &nbsp; carentalproject@gmail.com
               </a>
               <a href="/">
                 <FontAwesomeIcon icon={faLocationDot} />

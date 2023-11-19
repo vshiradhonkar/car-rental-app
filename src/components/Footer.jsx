@@ -49,7 +49,7 @@ function Footer() {
               <li>
                 <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNqbwNXQMpXbQgKsfFPrCvbsdLxwCgmTQCWCqSGrwdNDWPLnvHKNcLfSlzCTncJfRnpwL">
                   <FontAwesomeIcon icon={faEnvelope} /> &nbsp;
-                  carental@carrental.com
+                  carentalproject@gmail.com
                 </a>
               </li>
 
