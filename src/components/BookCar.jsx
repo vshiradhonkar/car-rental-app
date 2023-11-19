@@ -197,7 +197,7 @@ function BookCar() {
           dropOffDate: dropTime,
           inputPickupTime: inputPickupTime,
           inputDropoffTime:inputDropoffTime,
-          totalAmount,
+          totalAmount:amount,
           userName: name,
           userLastName: lastName,
           userPhone: phone,
