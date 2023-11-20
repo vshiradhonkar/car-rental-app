@@ -25,13 +25,13 @@ function Hero() {
           <img src={BgShape} alt="background-shape" className="bg-shape" />
           <div className="hero-content">
             <div className="hero-content_text">
-              <h4>Plan Your Trip now</h4>
+              <h4>Plan Your Trip Now</h4>
               <h1>
-                Save <span>big</span> with our car Rental
+                Save <span>BIG</span> with our CAR Rental
               </h1>
               <p>
-                Rent the Car of your dreams. Unbeatable prices, unlimited miles,
-                flexible pick-up options and much more.
+              Embark on Your Journey in Style! Irresistible Rates,
+              Endless Adventures, and Tailored Pick-Up Choices Await You.
               </p>
               <div className="hero-content_text_btns">
                 <Link onClick={() => window.scrollTo(0, 490)}

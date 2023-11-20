@@ -3,9 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { firestore } from "../firebase";
+import Lottie from "react-lottie";
+import animationData from "../Animations/laptop animation.json";
+
 
 function Footer() {
   const [email, setEmail] = useState("");
+  const lottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const handleSubscribe = async () => {
     try {
@@ -31,8 +42,10 @@ function Footer() {
 
   return (
     <>
+    
       <footer>
         <div className="container">
+
           <div className="footer-content">
             <ul className="footer-content_1">
               <li>
@@ -56,7 +69,7 @@ function Footer() {
               <li>
                 <a
                   style={{ fontSize: "14px" }}
-                  href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNqbwNXQMpXbQgKsfFPrCvbsdLxwCgmTQCWCqSGrwdNDWPLnvHKNcLfSlzCTncJfRnpwL"
+                  href="https://github.com/vshiradhonkar"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -89,12 +102,15 @@ function Footer() {
               <li>Mon - Fri: 9:00AM - 9:00PM</li>
               <li>Sat: 9:00AM - 4:00PM</li>
               <li>Sun: Closed</li>
+              <li><Lottie options={lottieOptions} height={220} width={"auto"} /></li>
             </ul>
 
             <ul className="footer-content_2">
               <li>Subscription</li>
               <li>
-                <p>Subscribe to our Email address for latest news & Updates.</p>
+                <p>Be Informed, Be Inspired: Subscribe for a front-row seat to the latest News,
+                Promotions, and Inspirations in the world of luxury travel.
+                </p>
               </li>
               <li>
                 <input
@@ -105,6 +121,9 @@ function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </li>
+              <br />
+              <br />
+
               <li>
                 <button className="submit-email" onClick={handleSubscribe} >Submit</button>
               </li>
@@ -113,6 +132,7 @@ function Footer() {
           </div>
         </div>
       </footer>
+      
     </>
   );
 }

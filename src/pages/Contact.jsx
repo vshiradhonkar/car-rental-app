@@ -77,7 +77,7 @@ function Contact() {
         <div className="container">
           <div className="contact-div">
             <div className="contact-div_text">
-              <h2>Need additional information?</h2>
+              <h2>Need Additional Information?</h2>
               <p>
               Unleash the thrill of the open road with us. Seamlessly browse, book, and ride – experience travel at your fingertips, where every journey is an adventure.
               </p>

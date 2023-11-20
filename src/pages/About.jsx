@@ -40,7 +40,7 @@ function About() {
             /> */}
             <div className="about-main_text">
               <h3>About Company</h3>
-              <h2>You start the engine and your adventure begins</h2>
+              <h2>Start the engine and adventure begins</h2>
               <p>
               We offer Premium cars to choose from, and our rates are competitive.
               Committed to providing our customers with the best possible customer service.
@@ -82,6 +82,20 @@ function About() {
           <p className='use-of_images'>
         All images of brand cars used on this website are for educational purposes only.The copyrights of these images belong to their respective owners. This usage is in accordance with the principles of fair use for educational and informational purposes. These images are not used for commercial gain, and their inclusion does not imply any endorsement or affiliation with CAR Rental.
         </p>
+        <p className='use-of_images'>
+        Developed by Winter(
+          <a
+          rel="noreferrer"
+          target="_blank" href='https://github.com/vshiradhonkar'>
+          GitHub
+          </a>, 
+          <a
+          rel="noreferrer"
+          target="_blank" href='https://twitter.com/Tweetved1'>
+          X
+          </a>)
+        </p>
+        
         </div>
       </section>
       <div className="book-banner">
