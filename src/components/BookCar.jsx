@@ -4,6 +4,7 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth';
 import { CAR_DATA } from "./CarData";
 import emailjs from 'emailjs-com';
+import Confetti from 'react-confetti';
 
 
 
@@ -13,10 +14,12 @@ import carFerrari from "../images/cars-big/Ferrari.jpg";
 import carCamaro from "../images/cars-big/camaro.jpg";
 import carAven from "../images/cars-big/aventador.jpg";
 import carPorsche from "../images/cars-big/panamera-turbo.jpg";
+import License from "./License";
 
 function BookCar() {
   const [modal, setModal] = useState(false);
-
+  const [showConfetti, setShowConfetti] = useState(false);
+  
   const [carType, setCarType] = useState("");
   const [pickUp, setPickup] = useState("");
   const [dropOff, setDropOff] = useState("");
@@ -148,7 +151,18 @@ function BookCar() {
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [modal]);
+     // If modal becomes false, start the confetti and set a timeout to stop it after 5 seconds
+    if (!modal && showConfetti) {
+      setShowConfetti(true);
+    
+      const timeoutId = setTimeout(() => {
+        setShowConfetti(false);
+      }, 5000);
+  
+      // Cleanup the timeout when the component is unmounted or if modal changes
+      return () => clearTimeout(timeoutId);
+    }
+  }, [modal, showConfetti]);
 
   const confirmBooking = async (e) => {
     if (e) {
@@ -216,6 +230,7 @@ function BookCar() {
         );
   
         console.log('Email sent successfully:', emailResponse);
+        setShowConfetti(true);
       }
     } catch (error) {
       console.error('Error adding booking: ', error);
@@ -672,6 +687,13 @@ function BookCar() {
                 />
                 <p className="error-modal">This is Required Field.</p>
               </span>
+              <span>
+                <label>
+                  Driving License
+                </label>
+                <License />
+                <p className="error-modal">Please submit your license to avoid any inconvenience. Alternatively, you can provide a copy of your license to our agent.</p>
+              </span>
             </div>
             <span className="info-form_checkbox">
               <input type="checkbox" required/>
@@ -692,6 +714,7 @@ function BookCar() {
           </form>
         </div>
       </div>
+      {showConfetti && <Confetti />}
     </>
   );
 }

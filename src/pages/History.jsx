@@ -63,7 +63,7 @@ function History() {
       exit={{ opacity: 0, transition: { duration: 0.1 } }}
       className='history'
     >
-      <HeroPages name='Rental History' />
+      <HeroPages name='My Account' />
       <div className="history-container">
         <h2>Your Rental History</h2>
         {loading && <p>Loading...</p>}
