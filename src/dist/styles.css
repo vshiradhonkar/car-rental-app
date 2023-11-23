@@ -2498,7 +2498,7 @@ footer {
   margin-bottom: 2rem;
 }
 
-.contact-div_text a {
+.contact-div_text .tag {
   text-decoration: none;
   color: #010103;
   font-size: 1.6rem;

@@ -81,18 +81,18 @@ function Contact() {
               <p>
               Unleash the thrill of the open road with us. Seamlessly browse, book, and ride – experience travel at your fingertips, where every journey is an adventure.
               </p>
-              <a href="/">
+              <p className="tag">
                 <FontAwesomeIcon icon={faPhone} />
                 &nbsp; (0) 123-456-6789
-              </a>
-              <a href="/">
+              </p>
+              <p className="tag">
                 <FontAwesomeIcon icon={faEnvelope} />
                 &nbsp; carentalproject@gmail.com
-              </a>
-              <a href="/">
+              </p>
+              <p className="tag">
                 <FontAwesomeIcon icon={faLocationDot} />
                 &nbsp; Los Santos
-              </a>
+              </p>
               
             </div>
 
