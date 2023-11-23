@@ -8,6 +8,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, getDocs, query } from 'firebase/firestore';
 import { NavLink } from 'react-router-dom';
 
+
 function History() {
   const [rentalHistoryData, setRentalHistoryData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,10 @@ function History() {
               totalAmount: data.totalAmount,
             });
           });
+
+          // Sort the historyData array by pickUpDate in descending order
+          historyData.sort((a, b) => new Date(b.pickUpDate) - new Date(a.pickUpDate));
+
           setRentalHistoryData(historyData);
         } catch (error) {
           console.error('Error fetching booking history: ', error);
@@ -63,19 +68,22 @@ function History() {
       exit={{ opacity: 0, transition: { duration: 0.1 } }}
       className='history'
     >
-      <HeroPages name='My Account' />
+      <HeroPages name='Rental History' />
       <div className="history-container">
         <h2>Your Rental History</h2>
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
-        {!loading && !error && rentalHistoryData.length === 0 && (<div className='no-history'>
-        <NavLink to="/" style={{ textDecoration: 'none', color:"#ad21ff" }}>Explore our premium cars and start building your rental history with us today! Book Now.</NavLink>
-          </div>)}
+        {!loading && !error && rentalHistoryData.length === 0 && (
+          <div className='no-history'>
+            <NavLink to="/" style={{ textDecoration: 'none', color: "#ad21ff" }}>Explore our premium cars and start building your rental history with us today! Book Now.</NavLink>
+          </div>
+        )}
 
         {!loading && !error && rentalHistoryData.length > 0 && (
           <table className="history-table">
             <thead>
               <tr style={{ fontWeight: 'bold', fontSize: '1.2em' }}>
+                <th>Order ID</th>
                 <th>Car Name</th>
                 <th>Pick-up Date</th>
                 <th>Drop-off Date</th>
@@ -87,21 +95,24 @@ function History() {
             <tbody>
               {rentalHistoryData.map((historyItem) => (
                 <tr key={historyItem.id}>
+                  <th>{historyItem.id}</th>
                   <td>{historyItem.carName}</td>
                   <td>{historyItem.pickUpDate}</td>
                   <td>{historyItem.dropOffDate}</td>
                   <td>{historyItem.pickUpLocation}</td>
                   <td>{historyItem.dropOffLocation}</td>
-                  <td>
-                  {typeof historyItem.totalAmount === 'number'
-                    ? `$${historyItem.totalAmount}`
-                    : 'N/A'}  
+                  <td style={{ fontWeight: 'bold'}}>
+                    {typeof historyItem.totalAmount === 'number'
+                      ? `$${historyItem.totalAmount}`
+                      : 'N/A'}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         )}
+        <p style={{fontSize: "1.2rem"}}>*Please note that pickup times may vary based on availability.</p>
+          
       </div>
       <Banner />
       <Footer />

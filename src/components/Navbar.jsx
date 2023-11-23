@@ -194,7 +194,7 @@ function Navbar() {
             {
               isUserSignedIn ? (<>
                 <Link onClick={() => window.scrollTo(0, 0)} className="navbar_buttons_sign-in" to="/history">
-                  My Account
+                  Rental History
                 </Link>
                 <Link onClick={handleSignOut} className="navbar_buttons_sign-out">
                   Sign out

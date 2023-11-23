@@ -3143,13 +3143,13 @@ label {
 
 .history-container {
   width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 .history h2 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: black;
 }
 
@@ -3185,10 +3185,14 @@ label {
 }
 /* Responsive styles for history component */
 @media (max-width: 768px) {
+  .history-container {
+    margin: 1rem 3rem;
+  }
+
   .history-table th,
   .history-table td {
-    font-size: 1rem; /* Adjust the font size for smaller screens */
-    padding: 8px; /* Adjust padding for smaller screens */
+    font-size: 8px;
+    padding: 3px;
   }
 
   .no-history {

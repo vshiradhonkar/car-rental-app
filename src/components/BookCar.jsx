@@ -502,11 +502,14 @@ function BookCar() {
         <div className="booking-modal_message">
           <h4>
             <i className="fa-solid fa-circle-info"></i>
-            Upon Completing this reservation enquiry , You will recieve:
+            Upon completion, you will receive:
           </h4>
           <p>
-          Your rental voucher is to be presented upon arrival at the rental desk, along with a toll-free customer support number. Please note that pickup and drop-off times may vary based on availability
+          You will receive an email containing your booking details which should be presented upon arrival at the rental desk. 
+          For further assistance and to proceed with the next steps, kindly refer to the details provided in the email.
+          <p style={{fontSize: "1rem"}}> Please note that pickup and drop-off times may vary based on availability.</p>
           </p>
+          
         </div>
 
         {/* Car Info */}
