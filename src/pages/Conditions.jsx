@@ -11,8 +11,8 @@ function Conditions() {
 return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0, transition: {duration:0.1}}} className='terms'>
         <HeroPages name="Terms & Conditions" />
-        <h1 className='termsheading'>Car Rental Terms and Conditions</h1>
-        <p className='termspara'>Welcome to our car rental service. Please read these Terms and Conditions carefully before using our website or app.</p>
+        <h1 className='termsheading'>Terms and Conditions</h1>
+        <p className='termspara'>Please read these Terms and Conditions carefully before using our website.</p>
         <div className='allconditions'>
 
         <h1>1. Booking and Reservation</h1>

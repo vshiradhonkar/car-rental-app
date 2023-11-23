@@ -3055,9 +3055,8 @@ label {
   justify-content: flex-start;
   margin-left: 17px;
   padding-left: 145px;
-  font-size: 20px;
+  font-size: 1.5rem;
   margin-top: 5px;
-  color: rgba(109, 3, 209);
 }
 
 .allconditions {
@@ -3085,9 +3084,11 @@ label {
   font-size: 2.5rem;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
+  color: #333;
 }
 
 .allconditions p {
+  color: #565454;
   font-family: "Rubik", sans-serif;
   display: flex;
   font-size: 2rem;
