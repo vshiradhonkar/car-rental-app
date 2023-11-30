@@ -11,11 +11,11 @@ import Register from "./pages/Register";
 import Conditions from './pages/Conditions';
 import {AnimatePresence} from 'framer-motion';
 import History from './pages/History';
-import NotFound from './components/NotFound';
+import NotFound from './components/not-found';
 
 function AnimatedRoutes() {
     const location = useLocation();
-return (
+    return (
     <div>
     <AnimatePresence>
         <Routes location={location} key={location.pathname}>
@@ -30,6 +30,7 @@ return (
             <Route path="/conditions" element={<Conditions />} />
             <Route path="/history" element={<History />} />
             <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     </AnimatePresence>
     </div>
