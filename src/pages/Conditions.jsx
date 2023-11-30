@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroPages from "../components/HeroPages";
 import ScrollTop from '../components/ScrollTop';
-import Footer from '../components/Footer';
 import { motion } from "framer-motion";
 import Banner from '../components/Banner';
 
@@ -266,9 +265,7 @@ return (
         </p>
 
     </div>
-        
         <Banner/>
-        <Footer />
         <ScrollTop />
     </motion.div>
 )

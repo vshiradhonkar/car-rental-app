@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HeroPages from "../components/HeroPages";
-import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
@@ -147,7 +146,6 @@ function Contact() {
             </div>
           </div>
         </div>
-        <Footer />
         <ScrollTop/>
       </section>
     </motion.div>

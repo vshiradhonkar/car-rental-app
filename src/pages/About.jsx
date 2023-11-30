@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../components/Footer'
 import HeroPages from "../components/HeroPages"
 import PlanTrip from "../components/PlanTrip";
 // import AboutMain from "../images/about/about-main.jpg";
@@ -110,7 +109,6 @@ function About() {
           </div>
         </div>
       </div>
-      <Footer />
     </motion.div>
   )
 }

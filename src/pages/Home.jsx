@@ -8,7 +8,6 @@ import Testimonial from "../components/Testimonials"
 import Faq from "../components/Faq"
 import ChooseUs from '../components/ChooseUs';
 import Download from '../components/Download';
-import Footer from "../components/Footer";
 import {motion} from "framer-motion";
 
 function Home() {
@@ -23,7 +22,6 @@ function Home() {
       <Testimonial/>
       <Faq/>
       <Download/>
-      <Footer/>
     </motion.div>
   )
 }

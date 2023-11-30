@@ -1,6 +1,5 @@
 import React from 'react';
 import HeroPages from '../components/HeroPages';
-import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import ScrollTop from '../components/ScrollTop';
@@ -29,7 +28,6 @@ function Team() {
             </div>
           </div>
         </div>
-        <Footer />
         <ScrollTop/>
       </section>
     </motion.div>

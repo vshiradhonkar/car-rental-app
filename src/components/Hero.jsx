@@ -3,30 +3,22 @@ import BgShape from "../images/cars-big/hero/bg-hero.png";
 import HeroCar from "../images/cars-big/hero/main-car.png";
 import { Link } from "react-router-dom";
 import ScrollTop from "./ScrollTop";
-// import Lottie from "react-lottie";
-// import animationData from "../Animations/hero animation.json";
+import 'animate.css';
 
 
 function Hero() {
   
-  // const lottieOptions = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: animationData,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
+
   
   return (
     <>
       <section id="home" className="hero-section">
-        <div className="container">
+        <div className="container ">
           <img src={BgShape} alt="background-shape" className="bg-shape" />
           <div className="hero-content">
-            <div className="hero-content_text">
-              <h4>Plan Your Trip Now</h4>
-              <h1>
+            <div className="hero-content_text animate__animated animate__bounceInLeft">
+              <h4 >Plan Your Trip Now</h4>
+              <h1 >
                 Save <span>BIG</span> with our CAR Rental
               </h1>
               <p>
@@ -47,7 +39,7 @@ function Hero() {
             {/* <div className="hero-content_car-img">
               <Lottie  options={lottieOptions} height={"auto"} width={"auto"} />
             </div> */}
-            <img src={HeroCar} alt="car-img" className="hero-content_car-img" />
+            <img src={HeroCar} alt="car-img" className="hero-content_car-img animate__animated animate__bounceInRight" />
           </div>
         </div>
 

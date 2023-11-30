@@ -1,6 +1,5 @@
 import React from 'react'
 import HeroPages from "../components/HeroPages";
-import Footer from "../components/Footer"
 import Testimonials from "../components/Testimonials"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -26,7 +25,6 @@ function TestimonialsPage() {
             </div>
           </div>
         </div>
-        <Footer />
         <ScrollTop/>
       </section>
     </motion.div>

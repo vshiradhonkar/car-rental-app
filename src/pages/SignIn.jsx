@@ -1,6 +1,5 @@
 import React from "react";
 import SignInC from "../components/SigninC";
-import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollTop";
 import HeroPages from "../components/HeroPages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,7 +29,6 @@ function SignIn() {
             </div>
           </div>
         </div>
-        <Footer />
         <ScrollTop />
       </section>
     </motion.div>

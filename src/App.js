@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import "../src/dist/styles.css";
 import { SunspotLoader } from 'react-awesome-loaders-py3';
 import AnimatedRoutes from './AnimatedRoutes';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <>
           <Navbar />
           <AnimatedRoutes />
+          <Footer />
         </>
       )}
     </div>

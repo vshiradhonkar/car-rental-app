@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HeroPages from '../components/HeroPages';
 import ScrollTop from '../components/ScrollTop';
-import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import Banner from '../components/Banner';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -115,7 +114,6 @@ function History() {
           
       </div>
       <Banner />
-      <Footer />
       <ScrollTop />
     </motion.div>
   );

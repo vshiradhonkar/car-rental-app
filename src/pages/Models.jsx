@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 import HeroPages from "../components/HeroPages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -310,7 +309,6 @@ function Models() {
             </div>
           </div>
         </div>
-        <Footer />
         <ScrollTop/>
       </section>
     </motion.div>

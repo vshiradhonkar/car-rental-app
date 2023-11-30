@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faPhone, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import HeroPages from "../components/HeroPages";
-import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollTop";
 import {Link, useNavigate} from 'react-router-dom';
 import {motion} from "framer-motion";
@@ -204,7 +203,6 @@ function Register() {
           </div>
         </div>
       </div>
-      <Footer />
       <ScrollTop />
     </motion.div>
   );
