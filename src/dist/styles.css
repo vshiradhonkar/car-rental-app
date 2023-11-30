@@ -2667,8 +2667,7 @@ footer {
 .background-image {
   margin-top: 30px;
   position: absolute;
-  top: 0;
-  width: 100%;
+  width: 45%;
   height: 60vh;
   /* background-image: url("/src/images/Login/65042363_e43aaa.jpg"); */
   background-size: cover;
